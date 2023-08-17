@@ -1,0 +1,92 @@
+/*
+Normalize
+
+Los navegadores siempre traen un estilo por defecto; la letra de color negro, una
+distancia entre el titulo y el parrafo de abajo, o el titulo y los bordes de la 
+pagina, tambien cuando seleccionamos un texto y la seleccion tiene ese tamaño es
+porque el navegador dice que el line-height va a ser ese.
+
+El normalize lo usamos para reiniciar los estilos
+
+Buscamos en el navegador: normalice.css -> en github, la descargamos.
+Si tenemos node: entramos en la terminal, escribimos npm init, cuando se inicie node
+copiamos el comando: (npm install normalize.css)
+
+Si lo descargo se abrira un archivo. Dar click derecho >> guardar como >> guardar
+
+Para incluirlo, escribo en el archivo HTML (en el <head>) 
+<link rel="stylesheet" type="text/css" href="normalize.css">
+
+Otra forma de incluirlo es copiando el enlace del archivo y lo pegamos
+en (href="aqui"). Asi que se puede de manera local o llamando a un servidor
+
+*
+
+Vamos a modificar unas cosas
+
+Entramos al normalize (en otra ventana del editor de codigo)
+Buscamos en sublime con: ctrl + f
+
+Buscamos img ->
+
+img {
+	border-style: normal;
+}
+
+A esto le agregamos un (max-width: 100%;)
+Esto es para que las imagenes en los moviles la ajuste al 100% y que no se nos pase
+(es importante que lo agreguemos) ->
+
+img {
+	border-style: normal;
+	max-width: 100%;
+}
+
+*
+
+Despues buscamos el (border-box)
+Si no está, vamos arriba del todo y lo agregamos dentro de un selector universal
+(al comienzo de la documentacion)
+
+* {
+	box-sizing: border-box: ;
+}
+
+Esto es para: cuando agrego un par de propiedades, la "caja" de una pagina aumenta
+de tamaño. Si quiero que una caja sea de 50px y le agrego un padding de 20px,
+entonces el ancho va a ser ahora de 90px, porque 20px arriba, 20px abajo, mas
+los 50px
+
+Si una caja es de un tamaño y quiero que sea siempre de ese tamaño, 
+se usa (box-sizing: border-box). Si yo le agrego padding arriba y padding abajo,
+son 20px, 20px y el programa se va a encargar solo de completar, en este caso
+quiero que sea de 50px, entonces le agrega en el espacio del medio los 10px faltantes
+(tambien es importante que lo agreguemos)
+Ademas le vamos a agregar un (padding 0;) y (margin: 0;)
+(hay que poner 0 y no 0px, ya que es igual a darle 0mm, 0cm, 0em, 0vh. Porque
+cualquier unidad multiplicada por cero, da cero. Solo el 0 es mas facil, una
+buena practica) -->
+
+//Esto en Normalize.css
+* {
+	box-sizing: border-box;
+	padding: 0;
+	margin: 0;
+}
+
+Despues de esto, podemos trabajar al 100% con CSS
+(colocar los estilos despues de resetear todo con el Normalize 
+*/
+
+/*Propiedades asignadas anteriormente:*/
+
+.contact-form {
+	font-family: 'Lobster', cursive;
+	font-weight: 100;
+	font-size: 25px;
+}
+
+.contact-form__h2 {
+	font-size: 2em;
+	color: red;
+}

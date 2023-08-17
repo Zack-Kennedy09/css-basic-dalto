@@ -1,0 +1,547 @@
+* {
+	font-family: 'Lobster', cursive;
+	font-weight: 100;
+	font-size: 20px;
+}
+
+/*
+
+***PROPIEDADES DE CAJA >> background-color, display...***
+Propiedades >> padding, width and height, box-sizing, margin, bordes
+*/
+
+
+/*Permiten modificar el entorno de las cajas
+
+*background-color: permite cambiar el color de fondo
+*/
+
+h2 {
+	font-size: 30px;
+	background-color: #a22;  /*(dark red)*/
+	display: inline;  /*para que se comporte como un elemento en linea, pero pueda adquirir las propiedades de un elemento en bloque*/
+}
+
+/*Subtitulos, fondo:*/
+
+.subtitles {
+	font-size: 40px;
+	background-color: rgb(70, 200, 122);
+}
+
+/*
+
+PRIMERA PROPIEDAD:
+
+***PADDING***
+
+Es la distancia que hay entre el texto y los bordes de la caja.
+Tenemos 4 padding's: padding left (izquierda), padding top (arriba), padding right (derecha), 
+padding bottom (abajo)
+*/
+
+/*Imagenes de ejemplo, ancho*/
+.img-example {
+	width: 400px;
+}
+
+/*
+Para darle padding a cada una de estas propiedades...
+padding es un shortened propertly (propiedad acortada), una propiedad que podemos
+ponerla de varias formas:
+*/
+
+h4 {
+	font-size: 30px;
+	background-color: #a22;
+	display: inline-block;
+	padding-bottom: 20px; /*agregando el padding desde aqui*/
+	padding-top: 20px;
+	padding-left: 30px;
+	padding-right: 30px;
+
+}
+
+/*
+Se puede acortar todo esto en una sola linea, ya que es una sortened propertly,
+solo colocando la medida a un padding y de esta manera le estamos dando 20px 
+(en este caso), a todos los lados
+*/
+
+h5 {
+	font-size: 30px;
+	background-color: #a22;
+	display: inline-block;
+	padding: 20px;
+}
+
+/*
+Si queremos que en el eje "X" (arriba y abajo) tenga una medida y en el
+eje "Y" (izquierda y derecha) tenga otra:
+
+Separamos las medidas como por parametros, los 20px seran para top and bottom, 
+mientras que los 30px seran para left and right:
+*/
+
+h6 {
+	font-size: 30px;
+	background-color: #a22;
+	display: inline-block;
+	padding: 20px 30px;	
+}
+
+/*
+Ahora si queremos asignar diferentes medidas a cada lado?
+Colocando las diferentes medidas en 4 parametros. Y se asignaran segun el orden
+en que reconocera las posiciones: 1 top, 2 right, 3 buttom, 4 lefth 
+*/
+
+/*(Por especificidad se sobreecribirán los valores de los <h6> por encima de
+el selector anterior)*/
+.seventh-title {
+	font-size: 30px;
+	background-color: #a22;
+	display: inline-block;
+	padding: 10px 20px 30px 40px;
+}
+
+/*Si por ejemplo, no definimos el 4to valor (el cuarto parametro) entonces
+el left pasará a ser 20px, al igual que quedó en el right
+*/
+
+/***HEIGHT AND WIDTH***
+***BOX-SIZING***/
+
+/*Añandimos otras propiedades como por ejemplo: height (alto) y width (ancho)*/
+.eighth-title {
+	font-size: 30px;
+	background-color: #a22;
+	display: inline-block;
+	padding: 10px 50px;
+	height: 100px;
+	width: 100px;
+	/*le dejamos el box-sizing como estaba antes de reiniciarlo con el nomalize
+	para ver como quedaria la caja: */
+	box-sizing: content-box;
+}
+/*De esta manera le estamos dando un alto de 100px con el height y a la vez
+se le estan sumando los 10px que tiene la propiedad padding, lo cual sumaria
+120px, ademas el ancho asignado de 100px del width, se le suman 50px de cada
+lado por lo que daria un total de 200px
+
+Asi que si queremos que sea fijo de 100px, cuando lo indicamos con el height
+y el width (hablando del ancho total de la caja), ahi es donde colocamos
+el box-sizing: borderbox;
+*/
+
+.ninth-title {
+	font-size: 30px;
+	background-color: #a22;
+	display: inline-block;
+	padding: 10px 50px;
+	height: 100px;
+	width: 100px;
+	box-sizing: border-box;
+}
+/*Ahora si queda definido que sera fijo de 100px y no se pasara de ahí
+
+Quedará deforme con respecto al nombre del titulo (el texto), ya que le dimos
+un padding de 10px y de 50px, lo que hace que se mueva 50px a la derecha, lo 
+que se puede hacer es colocar el contenedor mas grande:
+*/
+
+.tenth-title {
+	font-size: 30px;
+	background-color: #a22;
+	display: inline-block;
+	padding: 10px 50px;
+	height: 300px;
+	width: 300px;
+}
+
+/*Hay muchas formas de hacer esto mejor.
+Un ejemplo de centrar horizontalmente >> text-align: center;
+lo que hace es centrar el contenido que forma parte del texto al medio
+*/
+
+.eleventh-title {
+	font-size: 30px;
+	background-color: #a22;
+	display: inline-block;
+	padding: 10px 50px;
+	height: 100px;  /*El height lo dejo en 100px para que no estorbe tanto hacia abajo*/
+	width: 300px;
+	text-align: center;
+}
+
+/*
+
+***MARGIN***
+
+Es la distancia que hay entre dos cajas.
+Si tenemos un margin de 0, las cajas van a estar pegadas.
+Al igual que padding, tiene top, right, bottom and left 
+*/
+
+/*dos cajas, separadas por un espacio de etiquetas*/
+.twelfth-title {
+	font-size: 30px;
+	background-color: #a22;
+	display: inline-block;
+	padding: 100px;
+	text-align: center;	
+}
+
+/*dos cajas juntas, sin margin*/
+.thirteenth-title {
+	font-size: 30px;
+	background-color: #a22;
+	display: inline-block;
+	padding: 100px;
+	text-align: center;
+}
+
+/*Le damos margin de 10px*/
+.fourteenth-title {
+	font-size: 30px;
+	background-color: #a22;
+	display: inline-block;
+	padding: 100px;
+	margin: 10px;
+}
+
+/*Linea para apreciar la separacion de la caja*/
+.separation-box {
+	background-color: #a22;
+}
+
+/*Le damos distintos tamaños a los lados del margin. 
+20px up and down, 10px left and right*/
+.fifteenth-title {
+	font-size: 30px;
+	background-color: #a22;
+	display: inline-block;
+	padding: 100px;
+	text-align: center;
+	margin: 20px 10px;
+}
+
+/* * */
+
+/***BORDER-RADIUS***/
+/*Es el borde de una caja (controla el cuanto vamos a redondear el borde)*/
+
+.sixteenth-title {
+	font-size: 30px;
+	background-color: #a22;
+	display: inline-block;
+	padding: 100px;
+	text-align: center;
+	margin: 20px 10px;
+	border-radius: 10px;
+}
+
+/*Agregando 50% de border-radius*/
+.seventeenth-title {
+	font-size: 30px;
+	background-color: #a22;
+	display: inline-block;
+	padding: 100px;
+	text-align: center;
+	margin: 20px 10px;
+	border-radius: 50%;
+}
+
+/*Agregando 2em de border-radius*/
+.eighteenth-title {
+	font-size: 30px;
+	background-color: #a22;
+	display: inline-block;
+	padding: 100px;
+	text-align: center;
+	margin: 20px 10px;
+	border-radius: 2em;
+}
+
+/*Cambiando el margin de los subtitulos para sustituir la etiqueta <br>
+y ademas centrar el texto*/
+
+.subtitles-modified {
+	font-size: 40px;
+	background-color: rgb(103 77 230);
+	text-align: center;
+	margin: 20px;
+}
+
+
+/***BORDER***/
+
+/*Tambien esta el border normal. Es un "sortened property" 
+(una propiedad acortada). Tenemos:
+border-width:;
+border-color:;
+border-style:;
+Para simplificar estas propiedades:
+1.Primero le damos el tamaño al borde = 4px
+2.El estilo. Hay muchos como solid, dashed, double... = solid
+3.El color = blue
+Esto se coloca como parametros dentro de la propiedad
+*/
+
+.nineteenth-title {
+	padding: 100px;
+	margin: 20px 10px;
+	border-radius: 2em;
+	border: 10px solid blue;
+}
+
+/*Mas estilos del border*/
+
+.twentieth-title {
+	font-size: 30px;
+	background-color: #a22;
+	display: inline-block;
+	text-align: center;  /*de aqui hacia atras lo normal (para practicar)*/
+	padding: 10px;
+	margin: 10px;
+	border-radius: 2em;
+	border: 10px dashed blue;
+}
+
+.twentiethFirst-title {
+	font-size: 30px;
+	background-color: #a22;
+	display: inline-block;
+	text-align: center;
+	padding: 10px;
+	margin: 10px;
+	border-radius: 2em;
+	border: 10px double blue;
+}
+
+/*Con el color no se aprecia bien los estilos groove, inset y outset,
+con grey por ejemplo si se puede ver*/
+
+.twentiethSecond-title {
+	font-size: 30px;
+	background-color: #a22;
+	display: inline-block;
+	text-align: center;
+	padding: 10px;
+	margin: 10px;
+	border-radius: 2em;
+	border:10px groove grey;
+}
+
+/*border ridge*/
+.twentiethThird-title {
+	font-size: 30px;
+	background-color: #a22;
+	display: inline-block;
+	text-align: center;
+	padding: 10px;
+	margin: 10px;
+	border-radius: 2em;
+	border: 10px ridge grey; /*lo mismo que groove, pero invertido*/
+}
+
+/*border inset*/
+.twentiethFourth-title {
+	font-size: 30px;
+	background-color: #a22;
+	display: inline-block;
+	padding: 10px;
+	margin: 10px;
+	border-radius: 2em;
+	border: 10px inset grey;
+}
+
+/*y outset, que es invertido al inset...hay mas*/
+
+/*Nombres de los de estilos ordenados debajo de los ejemplos de border */
+
+.styles-example__1 {
+	display: inline-block;
+	margin: 0px 60px 70px;
+
+}
+
+/***BOX-SHADOW***/
+
+/*Esta propiedad nos permite darle sombra a la caja.
+El primer parametro le damos tamaño al eje X = 2px,
+el segundo al eje Y = 4px,
+el tercero va a ser el tamaño de desenfoque 15px,
+el cuarto el tamaño del borde, a esto generalmente se le da cero = 0,
+y el quinto es el color = #000 (negro)*/
+
+.twentiethFifth-title {
+	font-size: 30px;
+	background-color: #a22;
+	display: inline-block;
+	padding: 50px;
+	text-align: center;
+	margin: 15px 40px;
+	border-radius: 1em;
+	box-shadow: 2px 10px 25px 10px #000;
+}
+
+.twentiethSixth-title {
+	font-size: 30px;
+	background-color: #a22;
+	display: inline-block;
+	padding: 50px;
+	text-align: center;
+	margin: 15px 40px;
+	border-radius: 1em;
+	box-shadow: 0px 0px 10px 0px #000;
+}
+
+.twentiethSeventh-title {
+	font-size: 30px;
+	background-color: #a22;
+	display: inline-block;
+	padding: 50px;
+	text-align: center;
+	margin: 15px 40px;
+	border-radius: 1em;
+	box-shadow: 0px 0px 10px 3px #000;
+}
+
+.twentiethEighth-title {
+	font-size: 30px;
+	background-color: #a22;
+	display: inline-block;
+	padding: 50px;
+	text-align: center;
+	margin: 35px 40px 10px 200px;
+	border-radius: 1em;
+	box-shadow: 0px 0px 15px 30px #000;	
+}
+
+.twentiethNinth-title {
+	font-size: 30px;
+	background-color: #a22;
+	display: inline-block;
+	padding: 50px;
+	text-align: center;
+	margin: 35px 50px;
+	border-radius: 1em;
+	box-shadow: 30px 10px 10px 10px #000;
+}
+
+/*Para darle mas intensidad del sombreado colocar coma "," despues de los 
+parametros y volverlos a colocar: */
+
+.thirtieth-title {
+	font-size: 30px;
+	background-color: #a22;
+	display: inline-block;
+	padding: 50px;
+	text-align: center;
+	margin: 20px 330px;
+	border-radius: 1em;
+	box-shadow: 30px 10px 10px 10px #000,30px 10px 10px 10px #000,30px 10px 10px 10px #000;
+}
+
+/*Ejemplos de box-shadow*/
+
+.styles-example2__2 {
+	display: inline-block;
+	margin: 20px 45px 50px;
+}
+
+.styles-example2__2--margleft {
+	display: inline-block;
+	margin: 20px 45px 50px 190px;
+}
+
+
+/***TEXT-SHADOW***/
+
+/*
+Igual que la sombra del box-shadow pero con el texto. 
+Este solo tiene 4 parametros ya que no tiene el tamaño del borde (o rellenar),
+por lo que se le da estilo de esta manera:
+El primero eje X,
+El segundo eje Y,
+El tercero el difuminado,
+El cuarto el color
+*/
+
+.thirtiethFirst-title {
+	font-size: 30px;
+	background-color: #a22;
+	display: inline-block;
+	padding: 50px;
+	text-align: center;
+	margin: 20px 20px 0px;
+	border-radius: 1em;
+	text-shadow: 2px 2px 7px #fff;
+}
+
+/*Para darle mas intensidad del sombreado colocar coma "," despues de los 
+parametros y volverlos a colocar: */
+
+.thirtiethSecond-title {
+	font-size: 30px;
+	background-color: #a22;
+	display: inline-block;
+	padding: 50px;
+	text-align: center;
+	margin: 20px;
+	border-radius: 1em;
+	text-shadow: 2px 2px 7px #fff, 2px 2px 7px #fff ; 
+}
+
+/*Example title 32*/
+
+.styles-example3__3 {
+	margin: 0px 20px 50px;
+}
+
+/***TRANSFORMER-ROTATE***/
+
+.thirtiethThird-title {
+	font-size: 30px;
+	background-color: #a22;
+	display: inline-block;
+	padding: 50px;
+	text-align: center;
+	margin: 75px 5px 120px;
+	border-radius: 1em;
+	box-shadow: 2px 10px 25px 10px #000;
+	text-shadow: 2px 2px 7px #fff, 2px 2px 7px #fff;
+	transform: rotate(90deg);
+}
+
+/*Rotar 45 grados*/
+
+.thirtiethFourth-title {
+	font-size: 30px;
+	background-color: #a22;
+	display: inline-block;
+	padding: 50px;
+	text-align: center;
+	margin: 75px 5px 120px;
+	border-radius: 1em;
+	box-shadow: 2px 10px 25px 10px #000;
+	text-shadow: 2px 2px 7px #fff, 2px 2px 7px #fff;
+	transform: rotate(45deg);
+}
+
+/*Rotar -45 grados*/
+
+.thirtiethFifth-title {
+	font-size: 30px;
+	background-color: #a22;
+	display: inline-block;
+	padding: 50px;
+	text-align: center;
+	margin: 75px 5px 120px;
+	border-radius: 1em;
+	box-shadow: 2px 10px 25px 10px #000;
+	text-shadow: 2px 2px 7px #fff, 2px 2px 7px #fff;
+	transform: rotate(-45deg);
+
+}

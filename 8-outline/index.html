@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Outline</title>
+	<link rel="stylesheet" type="text/css" href="estilo.css">
+	<link rel="stylesheet" type="text/css" href="normalize.css">
+</head>
+<body>
+	<h1 class="title-style">Outline</h1>
+	<p>
+		<b>Es un shortened property</b> (propiedad acortada) porque es el conjunto de otras propiedades, como por ejemplo tenemos border-color, border-widht, border-style. Y esas propiedades se abrevian colocando solo border.<br>
+		Abreviando lo anterior seria: border: 1px solid red;<br>
+		de esa forma se reduce codigo y es una buena practica<br><br>
+		Outline es como un border pero sin afectar a las demas cajas, no ocupa un espacio real en el el DOM. El DOM es el Document Object Model (Modelo de Objetos del Documento), estos son todos los elementos que están dentro de nuestra página, se puede decir que si forma parte del DOM pero no afecta las posiciones, los tamaños, no cambia nada, solamente resalta; <b>es como una especie de resaltador</b><br><br>Por ejemplo:<br><br>
+		Agregamos dos <b>divs</b> con las clases "clase1 y clase2"<br>
+		Luego le damos estilo. *Esto en CSS*:<br><br>
+
+		.clase1 {<br>
+		width: 100px;<br>
+		height: 100px;<br>
+		background: red;<br>
+		}<br><br>
+		.clase2 {<br>
+		width: 100px;<br>
+		height: 100px;<br>
+		background: yellow;<br>
+		}<br><br>
+
+	</p>
+	<div class="caja1"></div>
+	<div class="caja2"></div>
+	<p><br>
+		Al momento de darle las mismas propiedades a diferentes clases, se puede acortar colocando las dos clases en la misma posicion del selector, pero separados por una coma ","<br><br>
+		.caja3, caja4 {<br>
+		 width: 200px;<br>
+		 height: 200px;<br>
+		 background: red;<br>
+		}<br><br>
+	</p>
+	<div class="caja3"></div>
+	<div calss="caja4"></div><br>
+	<p>
+		<strike>No se ven ambos cuadros??</strike> 
+	</p><br>
+	<p>
+		Pero como yo voy a darle otras propiedades, sigo escribiendo en las dos clases por separado.<br>
+		Lo que vamos a hacer es ver como una caja afecta a la otra caja...<br>
+		las centramos, dandole un "margin: auto" a ambas.<br><br>
+		El margin:auto funciona: arriba y abajo lo que se defina o lo que ya está y a los lados es 50 y 50 (el tamaño total del contenedor menos la mitad de la caja de margin left y lo mismo con margin right). Es un calculo automatico que hace el navegador cuando le decimos margin:auto. Esto funciona con los elementos que son bloques y no están posicionados (mas adelante se habla bien de eso)
+	</p><br>
+	<div class="caja5"></div>
+	<div class="caja6"></div>
+	<p><br>
+		Que pasa si a la caja de arriba le doy estos valores:<br>
+		border: 10px solid blue
+	</p>
+	<div class="caja7"></div>
+	<div class="caja8"></div><br><br>
+	<p>
+		Logicamente adquiere un borde azul, ahora esto está ocupando un lugar (le esta sacando un lugar al rojo).<br>
+		Recordando que la propiedad "box-sizing: border-box;" se agregó en el normalize, esto por defecto tiene la propiedad de "box-sizing: content-box;"...<br><br>
+		box-sizing: content-box;
+	</p>
+	<p class="separation">.</p>
+	<div class="caja9"></div>
+	<div class="caja10"></div><br>
+	<p>
+		De ésta manera, si le asignamos 150px a la caja, le suma a esos 150 los 10px de cada lado que corresponde a los bordes. Asi que serian 170px por 170px el tamaño total de la caja (caja roja). A la vez que el borde ocupa el espacio, la caja amarilla la mueve hacia abajo la cantidad de pixeles que ocupa verticalmente la caja roja<br><br>
+		Si reemplazamos la propiedad de border por la propiedad outline, va hacer el mismo efecto de borde pero no ocupará espacio ni moverá las cajas<br><br>
+		outline: 10px solid blue;
+	</p><br>
+	<p class="separation">.</p>
+	<dir class="caja11"></dir>
+	<dir class="caja12"></dir><br>
+	<p>
+		No mueve la caja amarilla ni la roja. Asi que es para localizar/marcar el objeto<br>
+		El outline es lo que tienen los campos de texto (los inputs)<br><br>
+	</p>
+	<input type="text">
+	<p>
+		Cuando hago click en el input se crea un borde, ese borde es un outline<br><br>Para comprobarlo, le sacamos la propiedad al input:<br>
+		input type="text" style="outline: none !important"
+	</p><br>
+	<input type="text" style="outline: none !important"><br><br>
+	<p>
+		Ahora si le sacamos la propiedad de "box-sizing:box-content;", la propiedad de outline se aplicará por fuera de la caja pero no ocupara espacio que afecte a las cajas:<br><br>
+		Sin el box-sizing:box-content;<br>
+		outline: 10px solid blue;
+	</p><br>
+	<p class="separation">.</p>
+	<dir class="caja13"></dir>
+	<dir class="caja14"></dir>
+	<p><br>
+		Si por ejemplo quiero remarcar una caja entre varias cajas:
+	</p><br>
+	<div class="caja15"></div><div class="caja16"></div><div class="caja17"></div><div class="caja18"></div>
+	<p>
+		Al estar las 4 cajas pegadas no vemos diferencia entre ellas. Para poder notar la ubicacion de una de las cajas, seleccionamos una y le damos la propiedad outline y sin descontrolar nada, nos la remarca<br><br>
+		propiedad outline a la primera caja<br>
+		outline: 5px solid red;<br><br>
+	</p>
+	<div class="caja19"></div><div class="caja20"></div><div class="caja21"></div><div class="caja22"></div><br><br>
+	<p>
+		Ahora si le doy la propiedad outline a la ultima caja<br>
+		outline: 5px solid red;
+	</p><br>
+	<div class="caja20"></div><div class="caja21"></div><div class="caja22"></div><div class="caja23"></div><br>
+	<p>
+		En la primera caja el outline solo se remarca por arriba y abajo, pero en la cuarta caja la remarca completa, esto tiene una explicacion y es es z-index lo cual se verá mas adelante<br><br>
+		Asi se veria la caja 3:
+	</p><br>
+	<div class="caja24"></div><div class="caja25"></div><div class="caja26"></div><div class="caja27"></div><br>
+	<p>
+		Hay otra caja que la está tapando. Para ver el marcado completo habria que agregar un position: relative; propiedad que también se verá en el siguiente tema<br><br>
+		Mismo ejemplo que el anterior pero agregando position: relative;
+	</p><br>
+	<div class="caja28"></div><div class="caja29"></div><div class="caja30"></div><div class="caja31"></div><br>
+
+
+
+</body>
+</html>

@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Aprendiendo CSS</title>
+	<link rel="stylesheet" type="text/css" href="estilo.css">
+</head>
+<body>
+	<div>
+		<h1 id="title-black">Tema:<br>Metodologia de BEM</h1>
+	</div>
+	<br><p>***********************************</p><br>
+
+
+	<!--METODOLOGIA BEM-->
+
+	<!--(formulario) es el contenedor, (input) es el nombre del elemento-->
+	<h5>.1</h5>
+	<h3>First form</h3>
+	<div class="formulario">
+		<input type="text" class="formulario__input">
+		<input type="password" class="formulario__input">
+	</div>
+
+	<!--El primer (input) va a ser color green, y los demas brown--> 
+	<h5>.2</h5>
+	<h3>Second form</h3>
+	<div class="contact-form">
+		<input type="text" class="contact-form__hola">
+		<input type="text" class="contact-form__hola">
+		<input type="text" class="contact-form__hola">
+		<input type="password" class="contact-form__hola">
+	</div>
+
+	<!--La otra forma de hacer esto es colocando doble guion medio y el nombre de cualquier otra cosa, esto despues del nombre del elemento.
+	El primer <input> va ser blue y los demas quedaran por defecto black-->
+	<h5>.3</h5>
+	<h3>Third form</h3>
+	<div class="contact-form2">
+		<input type="text" class="contact-form2__hola2--hello">
+		<input type="text" class="contact-form2__hola2">
+		<input type="text" class="contact-form2__hola2">
+		<input type="password" class="contact-form__hola2">
+	</div>
+	<h5>.4</h5>
+	<!--Otro ejemplo
+	Si aca tubiera este <h2> dentro del <p> NO se haria esto:
+	contact-from3__p__h2
+	Si no esto:
+	contact-from3__p-h2-->
+	<div class="contact-form3">
+		<p class="contact-form3__p">
+			<h2 class="contact-form3__p-h2">Title</h2>
+		</p>
+	</div>	
+	<h5>.5</h5>
+	<!--El doble guion bajo (__) se pone por bloques, solo por cada bloque.
+	Si hay otra seccion:  -->
+	<div class="suscriber-form">
+		<p class="suscriber-form__p">qlq
+			<h2 class="suscriber-form__p-h2">Title</h2>
+		</p>
+	</div>
+
+</body>
+</html>
+
+
+
+
+

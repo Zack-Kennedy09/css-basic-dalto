@@ -1,0 +1,435 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Position</title>
+	<link rel="stylesheet" type="text/css" href="estilo.css">
+	<link rel="stylesheet" typpe="text/css" href="normalize.css">
+</head>
+<body>
+	<h1>
+		Position<!--*****************************************-->
+	</h1>
+	<p>
+	</p><br><br>
+	<p>
+		El position lo que hace es posicionar los elementos. Estar posicionado significa que adquiere nuevas propiedades y nos permiten hacer varias cosas. Algunas de ellas son: top, left, right, bottom, z-index que ahora las veremos con mas profundidad<br><br>
+		Tambien va a afectar el flujo de HTML y ese flujo es como el orden en que ponemos todos los elementos. Por ejemplo ponemos un "h1", despues un "h2", despues un "div" y despues un "p" pero no uno dentro de otro sino que cerrados. Otro ejemplo del flujo son 4 "divs", HTML nos va a dibujar las cajas de arriba hacia abajo o de la primera hacia la ultima.<br>
+		Asi que con el position esto no se toma en cuenta, dibujariamos estas cajas de formas distintas porque estamos posicionando el elemento 
+		<br>
+		Los valores de la propiedad position son:<br><br>
+		static, relative, absolute, fixed, sticky<br><br>
+	</p>
+	<h2>STATIC</h2><!--*****************************************-->
+	<p>
+		Es el valor por defecto, si ponemos esto, no va a estar posicionado.<br>Asi que las otos 4 valores son la forma de posicionarlo
+	</p>
+	<h2>RELATIVE</h2><!--*****************************************-->
+	<p>
+		Cuando le ponemos este valor de relative a una de las cajas parece que no cambia nada, pero si a otra de las cajas le colocamos un top:20px no se modifica, en cambio a la caja que le colocamos el position: relative; ésta si se modifica<br><br>
+		Ej. la caja1 tiene top:20px y la caja2 tiene position:relative y top:20px
+	</p><br>
+	<div class=caja1>caja1</div>
+	<div class=caja2>caja2</div>
+	<div class=caja3>caja3</div>
+	<div class=caja4>caja4</div>
+	<p>
+		Cuando posicionamos un elemento lo que hacemos es que adquiera 4 propiedades nuevas, las cuales son top, left, rigth, bottom y las que mas importan son top y left<br><br>
+		Si yo le doy la propiedad de top, le digo que se mueva, en este caso, 20px hacia abajo, pero esto tiene a su vez propiedades, primero lo que sucede es que el espacio que guardó, lo conserva, porque cuando nosotros trabajamos con HTML cada caja tiene un espacio reservado. Ejemplo, tenemos la caja1 y la caja2, la caja2 no aparece de primera (donde está la caja1) porque la caja1 está primero y tiene 120px de ancho x 120px de largo, lo que sucede es que ese espacio dentro del DOM va a estar reservado para esa caja, por eso la caja2 viene a continuacion.<br><br>
+		Entonces cuando nosotros le damos un position:relative; hacemos que el espacio se siga conservando, cosa que con el absolute por ejemplo, no sucede (en el absolute la caja3 se esconderia debajo de la caja2)<br><br>
+		Si le damos a la caja2 un top de 300px, la caja se va hasta abajo, pero el espacio que conserva sigue siendo el mismo (la caja3 no se reacomoda donde estaba la caja2, porque la caja2 sigue ocupando ese espacio)<br><br>
+		caja2:<br>
+		position:relative;<br>
+		top:300px
+	</p><br>
+	<div class=caja5>caja1</div>
+	<div class=caja6>caja2</div>
+	<div class=caja7>caja3</div>
+	<div class=caja8>caja4</div><br><br><br>
+	<p>
+		Ademas el punto de referencia es el mismo, los 300px los aplica desde donde estaba antes (debajo del borde de la caja1)<br><br>
+		Tambien al darle numeros negativos en top, lo que hará la caja es subir, lo que seria lo mismo que darle un valor con la propiedad bottom<br><br>
+		Hacemos lo mismo pero con la propiedad left (correrlo hacia la derecha)<br><br>
+		caja2:<br>
+		position:relative;<br>
+		left:50px<br><br>
+	</p>
+	<div class=caja9>caja1</div>
+	<div class=caja10>caja2</div>
+	<div class=caja11>caja3</div>
+	<div class=caja12>caja4</div><br>
+	<p>
+		Ahora si le doy un top:50px; y bottom:20px; se quedará unicamente con la propiedad de top, no es por que está usando la regla de la cascada y si saco el bottom quedará igual; la explicación de ésto es que las propiedades top y left son las mas importantes de las cuatro, la unica manera de que me aplique los valores de right y bottom, es que no estén presentes las otras al mismo tiempo<br><br>
+		Si le agrego tanto top como left, ambas si me las toma en cuenta:<br>
+		caja2:<br>
+		position: relative;<br>
+		top: 50px;<br>
+		left: 50px;<br><br>
+	</p>
+	<div class=caja13>caja1</div>
+	<div class=caja14>caja2</div>
+	<div class=caja15>caja3</div>
+	<div class=caja16>caja4</div>
+	<h2>Z INDEX</h2><!--*****************************************-->
+	<p>
+		Ademas con el position se adquiere otra propiedad que es el z-index.<br>El z-index es la forma en que vamos a colocar un elemento encima de otro. Ordena los elementos en el eje "Z", el que tenga un valor mas alto quedará mas cercano a nosotros (el eje Z muestra el archivo por encima o por debajo de todo lo demas)<br><br>
+		Tomando como referencia el ejemplo anterior, haremos que la caja3 quede por encima de la caja2.<br>
+		Solamente si le damos un position:relative a la caja3, ésta quedará por encima de la caja2 sin necesidad de colocarle el z-index, porque normalmente al dibujamos una caja y luego la otra, ésta ultima que acabamos de dibujar quedará encima, esto aplicado a si dos cajas están posicionadas, la que se posicionó de ultima, tomando en cuenda el orden en cascada, quedará por delante (porque es así el flujo).<br><br>
+		caja2:<br>
+		position:relative;<br>
+		top:50px;<br>
+		left;50px;<br><br>
+		caja3:<br>
+		position:relative;
+	</p><br>
+	<div class="caja17">caja1</div>
+	<div class="caja18">caja2</div>
+	<div class="caja19">caja3</div>
+	<div class="caja20">caja4</div><br>
+	<p>
+		Acá hay dos z-index, se podía decir que el valor por defecto de éstos z-index es de 0 (el de la caja1 y caja2). Entonces si quisieramos colocar la caja2 por encima de la caja3, le agregamos la propiedad de z-index con el valor de 1:
+		<br><br>
+		caja2:<br>
+		position:relative;<br>
+		top:50px;<br>
+		left:50px;<br>
+		z-index:1;<br><br>
+		caja3:<br>
+		position:relative;<br><br>
+	</p>
+	<div class="caja21">caja1</div>
+	<div class="caja22">caja2</div>
+	<div class="caja23">caja3</div>
+	<div class="caja24">caja4</div><br>
+	<p>
+		Con esto ya podemos reposicionar las cajas encima de otras. Es recomendable darle valores al z-index de 10 en 10 (como minimo), de ésta forma si queremos colocar cualquier elemento en medio no vamos a tener problemas con los valores por si luego se cruzan. Por ej. si tenemos un z-index de 10, y otro de 11, ya no podriamos colocar nada en medio para reposicionar una caja entre esas dos
+	</p>
+	<h3>Conflictos de hijos y padres</h3>
+	<p>
+		Si tenemos un div con la clase "hijo" dentro de otro div con la clase "contenedor", el "contenedor" es la caja padre y el "hijo" la caja que está adentro, de esa forma nos referimos a los elementos es HTML<br><br>
+		div padre: color blue, width and height de 300px<br>
+		div hijo: color orange, width and height de 120px
+	</p><br>
+	<div class="contenedor">
+		<div class="hijo"></div>
+	</div><br>
+	<p>
+		Como hacemos si quisieramos colocar la caja azul por encima de la naranja?
+
+		Para notar la diferencia al div contenedor le damos un margin de 40px para llevar las cajas mas hacia el centro y al div hijo le damos un position:relative, luego top y left de -20px para que sobresalga hacia arriba y a la izquierda:<br><br>
+		div contenedor: margin 40px<br>
+		div hijo: position relative, top and left -20px
+	</p>
+	<div class="contenedor2">
+		<div class="hijo2"></div>
+	</div>
+	<p>
+		Si le colocamos solo el position:relative a la caja del div contenedor, afectaria a las otras cajas quedando por encima pero con el div hijo no sucede esto, logicamente no se pone encima del hijo porque es el elemento en si el que se pone encima. Quiere decir que tanto las cajas naranja como la azul (que funcionan ambas como una sola caja) pero sí quedarian posicionadas encima de otras cajas, funcionan así porque fue al div contenedor que se le dió el position:relative<br><br>
+		div contenedor= position:relative<br>
+		div hijo= sin posicionar<br>
+		<strike>Esto no va a funcionar</strike><br><br>
+		Podemos intentar de otra manera, que funcionaria en otros casos. Si le damos un position:relative al div hijo y un z-index de 20px, mientras que al div contenedor (ya estando posicionado) le damos un z-index de 100px, el contenedor deberia estar por arriba, pero tampoco sucede<br><br>
+		div contenedor= <br>
+		position:relative<br>
+		z-index:100px;<br><br>
+		div hijo=
+		position:relative;<br>
+		z-index:20px<br>
+		<strike>Esto tampoco funciona</strike><br><br>
+		La unica forma en la que podemos lograr que un div padre quede por encima de un div hijo, es darle al div hijo un valor en el z-index de -1, mientras que el div contenedor no debe tener el z-index<br><br>
+		div contenedor=<br>
+		position:relative;<br><br>
+		div hijo=<br>
+		position:relative<br>
+		z-index: -1
+	</p>
+	<div class="contenedor3">
+		<div class="hijo3"></div>
+	</div>
+	<p>
+		(Si el background de toda la pagina lo tengo con otro color, no se verá la caja naranja hijo. Ej. fondo grey agredado con un selector universal (*))
+	</p>
+	<p>
+		Ahora, esto nos trae un monton de problemas, porque si tenemos un elemento que tiene un z-index de una forma y otro que tiene un z-index de otra forma, y ya venimos con z-index, esto no lo podriamos hacer de esta formas. Solo ya se sabe que es una posibilidad
+	</p>
+	<h2>ABSOLUTE</h2><!--*****************************************-->
+	<p>
+		Es igual que position:relative; pero tiene tres diferencian<br><br>
+		Para empezar, si le damos la propiedad:absolute a la caja2, notamos que la caja3 se escande debajo de la caja2 (en el lugar que por defecto corresponde a la caja2)<br><br>
+		3 divs normales:
+	</p>
+	<div class="caja25">caja1</div>
+	<div class="caja26">caja2</div>
+	<div class="caja27">caja3</div><br>
+	<p>
+		Le agrego la propiedad:<br>
+		caja2= position:absolute
+	</p><br>
+	<div class="caja28">caja1</div>
+	<div class="caja29">caja2</div>
+	<div class="caja30">caja3</div><br>
+	<p>
+		Para comprobar que la caja3 está por debajo de la caja2, le damos a la caja2 la propiedad de opacity (opacidad), que es la transparencia. Los valores que se pueden colocar van de 0 a 1, donde 0 es totalmente opaco y 1 es totalmente transparente. Se coloca el valor en decimales y se puede abreviar omitiendo el 0 antes del punto. Ej. (0.5 == .5), ademas se le pueden agregar varios decimeles Ej. (0.825).<br> 
+		Tambien le doy left para apreciar mejor las cajas<br><br>
+		
+		Del mismo ejemplo anterior, le doy a la caja2 un opacity:0.6 y left:50px<br><br>
+		
+		caja2=<br>
+		position:absolute;<br>
+		opacity: 0.6;<br>
+		left: 80px;
+	</p><br>
+	<div class="caja31">caja1</div>
+	<div class="caja32">caja2</div>
+	<div class="caja33">caja3</div><br>
+	<p>
+		Si recordamos, habia un espacio reservado por cada caja, al darle position:relative a la caja2, ésta pierde ese espacio, por lo tanto al estar vacio ese espacio la caja que está abajo pasa arriba<br><br>
+
+		Ademas el punto de referencia va a ser el contenedor o el viewport, si no es el contenedor, es el viewport. El viewport es toda la página (lo que se va al colocarlo en pantalla completa con f11), es decir, todo menos la barra de busqueda, ni las pestañas.<br>
+		Para comprobar el punto de referencia le doy a la caja2 un top:0<br><br>
+		caja2=<br>
+		position:absolute;<br>
+		top:0;
+	</p><br>
+	<div class="caja34">caja1</div>
+	<div class="caja35">caja2</div>
+	<div class="caja36">caja3</div>
+	<p><br>
+		Aparece al principio del viewport, ya que asi queda su punto de referencia<br><br>
+		Ahora si tuvieramos esto dentro de un contenedor, quedaria igual (en cuanto a la posición) A este contenedor podemos darle un margin y las cajas se van a separar del lado izquiero según se indique, pero la caja2 se va a mantener arriba de la pagina (el comienzo de viewport).<br><br>
+		
+		En que casos se posiciona con respecto al contenedor?:<br>
+		Cuando no definimos top o left o right o bottom, se posiciona a partir del contenedor. Asi que si en ese mismo ejemplo, le saco el top:0; se va a posicionar igual que el ejemplo de solo colocarle el absolute a la caja dos (la caja3 queda debajo de la caja2) porque éste es el absolute tomando como referencia el lugar donde quedó (la caja contenedora es el punto de referencia en ese caso)<br><br>
+
+		Otra explicación: Si a esto no le doy top, por ejemplo, el navegador realiza un algoritmo interno para medir la distancia entre la caja2 y la parte de arriba del viewport (y si tuviera la margin) entre la caja2 y la parte derecha? del viewport, asi que decide la medida del top y el left, (nos da la medida dinamicamente). Y cuando le damos la medida manualmente, ej. un top:20px; es a partir deñ viewport<br><br>
+
+		Otra caracteristica del position:absolute es que el ancho se va ajustar al contenido. Si en el ejemplo anterior le quitara a el selector general de los div el width y el height, se agruparán todas la cajas en una con el nombre de caja3 (si el position:absolute esta definido en todos los divs en un contenedor) y el background ocupará solo el ancho de la letra, aunque sea un elemento en bloque se ajusta:<br>
+	</p>
+	<img src="absolute1.png" alt="ej_absolute"><br>
+	<p>
+		Y  si le saco el position:absolute entonces se comportarian todas las cajas como elementos en bloque y esta vez una debajo de otra. Con position:relative esto no pasa... :<br>		
+	</p>
+	<img src="absolute2.png" alt="ej2_absolute">
+	<p>
+		Con position:absolute podemos hacer varias cosas como por ejemplo el clasico contenedor de las 4 esquinas.<br><br>
+
+		Para eso agregamos 4 cajas que estarán dentro de un contenedor, a todas le agregamos un position:absolute, excepto al contenedor que tendrá un position:static, (aunque sea el valor por defecto se coloca en el caso de que se le esté dando el position:absolute a todas las cajas por medio de un selector de div general).<br><br>
+
+		En este ejemplo lo hare por separado cada paso.<br>
+		En este link esta ej ejemplo como en el curso: <a href="contenedor_4_esquinas.html">Contenedor 4 esquinas</a><br><br>
+
+		Propiedades que tendrá el contenedor:<br>
+		-position: Si le di absolute a todos los divs, entonces le agrego al contenedor position:static.<br>
+		-border: Le doy el borde.<br>
+		-margin: Con el valor de auto centramos, esto es como decir "margin-left y margin-right" ya sabemos que si ponemos dos parametros los 50px son para el eje Y, mientras que el auto es para el eje X, asi que son 50 arriba y abajo y automatico a los costados, si le dieramos auto en el eje de Y no funciona verticalmente por eso le doy 50px<br>
+		-width y height: seran el tamaño que ocupe la caja del contenedor (es la principal)<br>
+		-background: el color de fondo del contenedor principal <br><br>
+
+		Propiedades del contenedor con 4 cajas:<br>
+		.container-corners2 {<br>
+		position: relative;<br>
+		border: 4px solid red;<br>
+		margin: 50px auto;<br>
+		width: 400px;<br>
+		height: 400px;<br>
+		background: green;<br><br>
+
+		Propiedades cajas:<br>
+		.caja41, caja42, caja43, caja44 {<br>
+		width: 100px;<br>
+		height: 100px;<br>
+		display: block;<br>
+		position: absolute;<br>
+		background: yellow;
+	</p>
+	<div class="container-corners2">
+		<div class="caja41">caja1</div>
+		<div class="caja42">caja2</div>
+		<div class="caja43">caja3</div>			
+		<div class="caja44">caja4</div>
+	</div><br>
+	<p>
+		Hasta aqui estan todas posicionadas de manera absoluta<br><br>
+
+		Ahora vamos a colocar una caja en cada esquina<br><br>
+
+		Para verificar que las cajas están posicionadas de manera absoluta le
+		podemos dar por ejemplo un top:200px y ella se moverá, en este caso la caja1 se movera 200px hacia abajo<br><br>
+
+		caja1= top:200px;
+	</p>
+	<div class="container-corners2-3">
+		<div class="caja45">caja1</div>
+		<div class="caja46">caja2</div>
+		<div class="caja47">caja3</div>			
+		<div class="caja48">caja4</div>
+	</div><br>
+	<p>
+		Ahora hay que tener un cuenta que el absolute toma como referencia el 
+		viewport o el contenedor. El contenedor lo puede tomar como punto de referencia solamente si está posicionado.<br>
+		Si le cambiamos el position:static por position:relative<br><br>
+
+		Ahora el elemento está posicionado<br><br>
+
+		Para mover las cajas a cada esquina:<br>
+		Si todas están en la esquina superior izquierda las movemos según la propiedad que requiera. Ej. para mover la caja1 a la esquina inferior derecha, primero se pasa a la derecha con right:0 y luego se pasa abajo con bottom:0;<br>
+		Y asi con los demás lados. Caja2 a la esquina superior derecha: right:0;<br>
+		Caja3 esquina superior izquierda: top:0;<br>
+		Caja4 esquina inferior izquierda: bottom:0;
+	</p>
+	<div class="container-corners2-4">
+		<div class="caja49">caja1</div>
+		<div class="caja50">caja2</div>
+		<div class="caja51">caja3</div>			
+		<div class="caja52">caja4</div>
+	</div>
+	<p>
+		Como hacemos si quisieramos agregar una caja en el medio.<br>
+		Agregamos otro div (caja5).<br>
+		No funcionaria si le dieramos por ejemplo un margin:auto;<br><br>
+		
+		Matematicamente esto se centraria con un margin:150px;<br>
+		Es los 400px de la caja contenedora, la mitad que son 200px, pero además le tengo que restar el de los costados, es el tamaño de la caja, osea 100px significa que tengo que sacarle la mitad a esto, son 50px.<br>
+		Entonces los 200px de mitad de la caja contenedora menos 50px de la mitad de la caja que irá centrada, son 150px.<br>
+		Aún asi le dimos 4px de borde, así que no estaria centrada del todo. Como el borde le está sacando 4px de cada lado, para un total de 8px. La mitad son 4px por lo que el calculo final seria un margin de 146px.<br><br>
+		caja5:<br>
+		margin:146px
+	</p>
+	<div class="container-corners2-5">
+		<div class="caja53">caja1</div>
+		<div class="caja54">caja2</div>
+		<div class="caja55">caja3</div>			
+		<div class="caja56">caja4</div>			
+		<div class="caja57">caja5</div>
+	</div>
+	<p>
+		Pero si tuviermos una caja de la cual no sabemos las dimensiones o no las definimos, porque mas adelante trabajamos con flex-box o grid<br><br>
+		.caja5 {<br>
+		top: 0;<br>
+		right: 0;<br>
+		bottom: 0;<br>
+		left: 0;<br>
+		margin: auto;<br>
+		}
+	</p>
+	<div class="container-corners2-6">
+		<div class="caja58">caja1</div>
+		<div class="caja59">caja2</div>
+		<div class="caja60">caja3</div>			
+		<div class="caja61">caja4</div>			
+		<div class="caja62">caja5</div>
+	</div>
+	<p>
+		De esta manera podemos centrarlo así no sepamos el ancho o el alto de la caja y sin estar haciendo algun calculo con JavaScript.
+		Porque se puede calcular manualmente, pero si va cambiendo? si se adapta a distintas resoluciones?. La mejor forma seria esta<br><br>
+
+		Se puede cambiar la posición de la caja general (el contenedor) modificando los valores y propiedades desde margin-top o margin-left por ejemplo<br><br>
+
+		contenedor (.container-corners2-7)=<br>
+		-(quito) margin: 50px auto;<br>
+		margin-left: 100px;<br>
+		margin-top: 50px;<br><br>
+	</p>
+	<div class="container-corners2-7">
+		<div class="caja63">caja1</div>
+		<div class="caja64">caja2</div>
+		<div class="caja65">caja3</div>			
+		<div class="caja66">caja4</div>			
+		<div class="caja67">caja5</div>
+	</div>
+
+	<h2>FIXED</h2><!--*****************************************-->
+	<p>
+		No funciona bien al tener incompatibilidad con los otros position en el mismo archivo, asi que lo realizé también en un archivo a parte donde está el ejemplo como en el curso:
+	</p>
+	<a href="fixed.html">fixed.html</a>
+	<a href="fixed.css">fixed.css</a><br><br><br>
+	<p>
+		Es exactamente igual que el absolute, pero con fixed queda fijado el elemento (fijo el un lugar)<br>
+		Este efecto se aplica generalmente en menus o en publicidad, donde mueves el scroll y la publicidad sigue ahi fija<br><br>
+
+		Agregamos el div al que se le dará el fixed<br><br>
+
+		.caja-fixed {<br>
+		background: red;<br>
+		position: fixed;<br>
+		}
+	</p>
+	<img src="fixed1.png" class="img" alt="fixed - propiedad">
+	<p>
+		Hasta ahora es como un absolute, el contenido que estaba debajo lo está tapando.<br>
+		Si le damos un display: 0.4px; veremos que por debajo de ese elemento div, hay mas texto.
+	</p><br>
+		<img src="fixed2.png" class="img" alt="fixed - property"><br>
+	<p>
+		No ocupa espacio en pantalla, el espacio ya no está reservado.<br><br>
+
+		Tenemos las propiedades como top:<br><br> 
+
+		top:20px;
+	</p><br><br>
+	<img src="fixed3.png" class="img" alt="fixed - property"><br><br>
+	<p>
+		Además si recorto el contenido, se ajusta. Es un bloque (tal como lo es cualquier div, sin embargo se ajusta al contenido, igual que el absolute)
+	</p><br>
+	<img src="fixed4.png"><br><br>
+	<p>
+		Y su diferencia es que queda fijo, lo cual sirve para algunos navs, resaltar algo, para un modal que es como una ventana emergente...<br><br>
+		Ahora lo que pasa es que nos está ocupando un fondo (está tapando el contenido). Hay varias soluciones para esto, una de ellas es colocarle en el body un padding-top: 100px; (el valor que se requiera). Al mismo tiempo bajará la caja que contiene el div que pretendemos usar como menú, asi que le damos dentro de la clase de éste div un margin: -100px;<br><br>
+
+		body {<br>
+			padding-top: 100px<br>
+	}<br><br>
+
+	.caja-fixed {<br>
+	margin: -100px;<br>
+	}
+	</p><br>
+	<img src="fixed5.png" class="img" alt="fixed - property">
+	
+	<h2>STICKY</h2><!--*****************************************-->
+
+	<p>
+		sticky fue la ultima que se implementó entre las positions. Es como una mezcla entre relative y fixed
+	</p><br>
+	<p>
+		No funciona bien al tener incompatibilidad con los otros position en el mismo archivo, asi que lo realizé también en un archivo a parte donde está el ejemplo como en el curso:
+	</p>
+	<a href="fixed.html">sticky.html</a>
+	<a href="fixed.css">sticky.css</a><br><br>
+	<p>
+		Le agregamos la propiedad al div, además le damos un opacity:0.3px; para comprobar que no se pone encima del contenido de abajo poque ésta propiedad si mantiene su espacio en la página (lo conserva como el relative)<br><br>
+
+		.caja-sticky {<br>
+		background: red;<br>
+		position: sticky;<br>
+		opacity: 0.3px;<br>
+		}
+	</p><br>
+	<img src="sticky1.png" class="img" alt="sticky"><br><br>
+	<p>
+		Ahora definimos en que lugar/momento de la página va a estar fijo.<br><br>
+
+		Para eso colocamos esa sección del div entre dos secciones de texto, para bajar el scroll y cuando lleguemos al punto del div con su position:sticky; se comenzara a quedar fijo como un fixed. Agregamos un top:0;<br><br>
+
+		.caja-sticky2 {<br>
+		background: aqua;<br>
+		position: sticky;<br>
+	}
+	</p><br>
+	<img src="sticky2.png" class="img" alt="sticky2">
+	<img src="sticky3.png" class="img" alt="sticky3"><br><br>
+	<p>
+		El top indicará la separación de la caja con la parte superior de la página.<br><br> 
+
+		Ej.<br>
+		.caja-sticky3 {<br>
+		background: green;<br>
+		top: 50px;<br>
+		}<br><br>
+	</p>
+	<img src="sticky4.png" class="img" alt="sticky4">
+	<img src="sticky5.png" >
+
+</body>
+</html>

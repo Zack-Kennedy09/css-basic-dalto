@@ -1,0 +1,80 @@
+/*Teoria de cajas*/
+
+/*Aplicando propiedades basicas*/
+* {
+	font-family: cursive;
+	font-weight: 700;
+	font-size: 20px;
+}
+
+/*Ejemplo grafico para diferenciar los que ocupa un elemanto de <h2> y uno de <b>*/
+.range-h2 {
+	background-color: red;
+}
+
+.range-b {
+	background-color: red;
+}
+
+
+/*
+Aqui se explica la teoria de las cajas naturales, pero se olvidó de explicar el 
+box model, así que finalizar esto lo explica...
+
+
+Hay dos tipos de cajas en HTML, las que son en linea y las que son en bloque.
+Las que son en bloque son las mas importantes, las paginas las dividen por bloques,
+siempre se van a ajustar al ancho de su contenedor (el ancho será el total de la 
+caja que la contiene).
+Si tengo por ejemplo un contenedor de 20px y adentro tengo un elemento en linea,
+el elemento en linea va a ser de 20px tambien (la misma medida a lo ancho)
+
+Mientras que un elemento en linea, su elemento es en base a su contenido
+
+Ej. 
+El <h2> es un elemento en bloque, todos los elementos que coloquemos despues
+del <h2> irán en la linea de abajo, ya que al ocupar todo el bloque entero, los 
+siguientes elemantos no caben en la pagina.
+
+El <b> es un elemento en linea, por lo que su ancho será de la longitud del texto 
+que hay dentro
+
+Por la misma razon no se pueden poner dos <h2> juntos, pero si se pueden poner
+varios <b> juntos hasta el espacio que quede disponible en ese bloque
+
+*
+
+Esto se puede cambiar, yo puedo hacer que por ejemplo los <b> (elementos en linea)
+se comporten como bloques y viceversa
+
+Para esto se usa la propiedad (display)
+Permite cambiar el comportamiento de las cajas
+display: block; es el valor por defecto
+inline -> elemento en linea
+*/
+
+h5 {
+	display:inline;
+}
+
+/*
+Los elementos en linea y en bloque tienen propiedades.
+A los elementos en linea no se les puede dar height ni width
+
+No se puede -> */
+
+b {
+	height: 400px;
+	width: 190px;
+}
+
+/*Elementos en bloque si se puede*/
+
+h6 {
+	height: 400px;
+	width: 190px;
+}
+
+
+
+

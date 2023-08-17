@@ -1,0 +1,693 @@
+* {
+	font-size: 30px;
+	font-family: cursive;
+}
+
+h1 {
+	font-size: 50px;
+	text-align: center;
+	padding: 30px;
+	margin: 0 0 30px;
+	background: rgb(43 174 158);
+}
+
+h2 {
+	font-size: 40px;
+	text-align: center;
+	padding: 30px;
+	margin: 50px 0;
+	background: rgb(68 61 207);
+}
+
+h3 {
+	font-size: 30px;
+	background: rgb(131 146 145);
+	display: inline-block;
+	padding: 10px;
+	margin: 40px 30px 30px;
+}
+/***POSITION***/ 
+
+
+/***RELATIVE***/ /**************************************************/
+
+/*Dandole estilos a las cajas de los disvs*/
+
+div {
+	width: 120px;
+	height: 120px;
+	display: block;
+	background-color: yellow;
+}
+
+.caja1 {
+	background-color: orange;
+	top: 20px;
+}
+
+.caja2 {
+	background-color: green;
+	position: relative;
+	top: 20px;
+}
+
+.caja3 {
+	background-color: lightblue;
+}
+
+.caja4 {
+	background-color: yellow;
+}
+
+/*Le doy top:300px a la segunda caja*/
+
+.caja5 {
+	background-color: orange;
+	top: 20px;
+}
+
+.caja6 {
+	background-color: green;
+	position: relative;
+	top: 300px;
+}
+
+.caja7 {
+	background-color: lightblue;
+}
+
+.caja8 {
+	background-color: yellow;
+}
+
+/*Le doy left:50px a la segunda caja*/
+
+.caja9 {
+	background-color: orange;
+	top: 20px;
+}
+
+.caja10 {
+	background-color: green;
+	position: relative;
+	left: 50px;
+}
+
+.caja11 {
+	background-color: lightblue;
+}
+
+.caja12 {
+	background-color: yellow;
+}
+/*I give top:50px and left:50px to second box*/
+
+.caja13 {
+	background-color: orange;
+}
+
+.caja14 {
+	background-color: green;
+	position: relative;
+	top: 50px;
+	left: 50px;
+}
+
+.caja15 {
+	background-color: lightblue;
+}
+
+.caja16 {
+	background-color: yellow;
+}
+
+/*I add z-index's property*/
+
+.caja17 {
+	background-color: orange;
+}
+
+.caja18 {
+	background-color: green;
+	position: relative;
+	top: 50px;
+	left: 50px;
+}
+
+.caja19 {
+	background-color: lightblue;
+	position: relative;
+}
+
+.caja20 {
+	background-color: yellow;
+}
+
+/*Adding the z-index to the box3*/
+
+.caja21 {
+	background-color: orange;
+}
+
+.caja22 {
+	background-color: green;
+	position: relative;
+	top: 50px;
+	left: 50px;
+	z-index: 1;
+}
+
+.caja23 {
+	background-color: lightblue;
+	position: relative;
+}
+
+.caja24 {
+	background-color: yellow;
+}
+
+/*Conflictos de hijos y padres*/
+
+.contenedor {
+	background: blue;
+	width: 300px;
+	height: 300px;
+}
+
+.hijo {
+	background: orange;
+	width: 120px;
+	height: 120px;
+}
+
+/*Agregando margen y posicion de las cajas*/
+
+.contenedor2 {
+	background: blue;
+	width: 300px;
+	height: 300px;
+	margin: 40px;
+}
+
+.hijo2 {
+	background: orange;
+	width: 120px;
+	height: 120px;
+	position: relative;
+	top: -20px;
+	left: -20px;
+}
+
+
+/*Posicionande el div hijo por debajo del div padre*/
+
+.contenedor3 {
+	background: blue;
+	width: 300px;
+	height: 300px;
+	margin: 40px;
+	position: relative;
+}
+
+.hijo3 {
+	background: orange;
+	width: 120px;
+	height: 120px;
+	position: relative;
+	top: -20px;
+	left: -20px;
+	z-index: -1;
+}
+
+
+/***ABSOLUTE***/ /**************************************************/
+
+/*Ejemplos de 3 cajas normales*/
+.caja25 {
+	background: orange;
+}
+
+.caja26 {
+	background: green;
+}
+
+.caja27 {
+	background: lightblue;
+}
+
+/*Agregando el position:absolute a la caja2*/
+
+.caja28 {
+	background: orange;
+}
+
+.caja29 {
+	background: green;
+	position: absolute;
+}
+
+.caja30 {
+	background: lightblue;
+}
+
+/*Adding the opacity to the box2 (and left)*/
+
+.caja31 {
+	background: orange;
+}
+
+.caja32 {
+	background: green;
+	position:absolute;
+	opacity: 0.6;
+	left: 80px;
+}
+
+.caja33 {
+	background: lightblue;
+}
+
+
+/*Adidng top:0 to the box2*/
+
+.caja34 {
+	background: orange;
+}
+
+.caja35 {
+	background: green;
+	position:absolute;
+	top: 0;
+}
+
+.caja36 {
+	background: lightblue;
+}
+
+/*Images*/
+img {
+	width: 500px;
+	height: 300px;
+}
+
+
+/*Contenedor 4 esquinas*/ /**************************************************/
+
+/*Propiedades que tendran todos los divs:
+display: block;
+position: absolute;
+*/
+
+/*Propiedades que tendrá el contenedor:
+-posotion: Si le di absolute a todos los divs, entonces le agrego al 
+contenedor position:static.
+-border: Le doy el borde.
+-margin: Con el valor de auto centramos, esto es como decir "margin-left y 
+margin-right" ya sabemos que si ponemos dos parametros los 50px son para el 
+eje Y, mientras que el auto es para el eje X, asi que son 50 arriba y abajo 
+y automatico a los costados, si le dieramos auto en el eje de Y no funciona 
+verticalmente por eso le doy 50px
+-width y height: seran el tamaño que ocupe la caja del contenedor (es la 
+principal)*/
+
+/*Contenedor*/
+.container-corners2 {
+	position: static;
+	border: 4px solid red;
+	margin: 50px auto;
+	width: 400px;
+	height: 400px;
+	background: green;
+
+}
+
+.caja41 {
+	width: 100px;
+	height: 100px;
+	display: block;
+	position: absolute;
+	background: yellow;
+}
+
+.caja42 {
+	width: 100px;
+	height: 100px;
+	display: block;
+	position: absolute;
+	background: yellow;
+}
+
+.caja43 {
+	width: 100px;
+	height: 100px;
+	display: block;
+	position: absolute;
+	background: yellow;
+}
+
+.caja44 {
+	width: 100px;
+	height: 100px;
+	display: block;
+	position: absolute;
+	background: yellow;
+}
+
+
+/*Hasta aqui estan todas posicionadas de manera absoluta*/
+
+/*Ahora vamos a colocar una caja en cada esquina*/
+
+/*Para verificar que las cajas están posicionadas de manera absoluta le 
+podemos dar por ejemplo un top:200px y ella se moverá, en este caso la caja1
+se movera 200px hacia abajo*/
+
+/*Contenedor3 agregando top:200px;*/
+.container-corners2-3 {
+	position: relative;
+	border: 4px solid red;
+	margin: 50px auto;
+	width: 400px;
+	height: 400px;
+	background: green;
+
+}
+
+.caja45 {
+	width: 100px;
+	height: 100px;
+	display: block;
+	position: absolute;
+	background: yellow;
+	top: 200px;
+}
+
+.caja46 {
+	width: 100px;
+	height: 100px;
+	display: block;
+	position: absolute;
+	background: yellow;
+}
+
+.caja47 {
+	width: 100px;
+	height: 100px;
+	display: block;
+	position: absolute;
+	background: yellow;
+}
+
+.caja48 {
+	width: 100px;
+	height: 100px;
+	display: block;
+	position: absolute;
+	background: yellow;
+}
+
+/*Cambiando position:static por position:relative;
+y posicionando cada caja con top:0; right:0; bottom:0;*/
+
+.container-corners2-4 {
+	position: relative;
+	border: 4px solid red;
+	margin: 50px auto;
+	width: 400px;
+	height: 400px;
+	background: green;
+
+}
+
+.caja49 {
+	width: 100px;
+	height: 100px;
+	display: block;
+	position: absolute;
+	background: yellow;
+	right: 0;
+	bottom: 0;
+}
+
+.caja50 {
+	width: 100px;
+	height: 100px;
+	display: block;
+	position: absolute;
+	background: yellow;
+	right: 0;
+}
+
+.caja51 {
+	width: 100px;
+	height: 100px;
+	display: block;
+	position: absolute;
+	background: yellow;
+	top: 0;
+}
+
+.caja52 {
+	width: 100px;
+	height: 100px;
+	display: block;
+	position: absolute;
+	background: yellow;
+	bottom: 0;
+}
+
+
+/*Agregar una caja en el medio*/
+
+.container-corners2-5 {
+	position: relative;
+	border: 4px solid red;
+	margin: 50px auto;
+	width: 400px;
+	height: 400px;
+	background: green;
+
+}
+
+
+.caja53 {
+	width: 100px;
+	height: 100px;
+	display: block;
+	position: absolute;
+	background: yellow;
+	right: 0;
+	bottom: 0;
+}
+
+.caja54 {
+	width: 100px;
+	height: 100px;
+	display: block;
+	position: absolute;
+	background: yellow;
+	right: 0;
+}
+
+.caja55 {
+	width: 100px;
+	height: 100px;
+	display: block;
+	position: absolute;
+	background: yellow;
+	top: 0;
+}
+
+.caja56 {
+	width: 100px;
+	height: 100px;
+	display: block;
+	position: absolute;
+	background: yellow;
+	bottom: 0;
+}
+
+
+.caja57 {
+	width: 100px;
+	height: 100px;
+	display: block;
+	position: absolute;
+	background: yellow;
+	bottom: 0;
+	margin: 146px;
+}
+
+/*Centrar con bottom:0; right:0; bottom:0; left:0; margin:auto;*/
+
+.container-corners2-6 {
+	position: relative;
+	border: 4px solid red;
+	margin: 50px auto;
+	width: 400px;
+	height: 400px;
+	background: green;
+
+}
+
+
+.caja58 {
+	width: 100px;
+	height: 100px;
+	display: block;
+	position: absolute;
+	background: yellow;
+	right: 0;
+	bottom: 0;
+}
+
+.caja59 {
+	width: 100px;
+	height: 100px;
+	display: block;
+	position: absolute;
+	background: yellow;
+	right: 0;
+}
+
+.caja60 {
+	width: 100px;
+	height: 100px;
+	display: block;
+	position: absolute;
+	background: yellow;
+	top: 0;
+}
+
+.caja61 {
+	width: 100px;
+	height: 100px;
+	display: block;
+	position: absolute;
+	background: yellow;
+	bottom: 0;
+}
+
+
+.caja62 {
+	width: 100px;
+	height: 100px;
+	display: block;
+	position: absolute;
+	background: yellow;
+	bottom: 0;
+	margin: 146px;
+}
+
+/*Cambiar posición de la caja contenedora
+Quito margin: 50px auto; y le doy margin-left:100px; margin-top:50px*/
+
+.container-corners2-7 {
+	position: relative;
+	border: 4px solid red;
+	width: 400px;
+	height: 400px;
+	background: green;
+	margin-left: 100px;
+
+}
+
+
+.caja63 {
+	width: 100px;
+	height: 100px;
+	display: block;
+	position: absolute;
+	background: yellow;
+	right: 0;
+	bottom: 0;
+}
+
+.caja64 {
+	width: 100px;
+	height: 100px;
+	display: block;
+	position: absolute;
+	background: yellow;
+	right: 0;
+}
+
+.caja65 {
+	width: 100px;
+	height: 100px;
+	display: block;
+	position: absolute;
+	background: yellow;
+	top: 0;
+}
+
+.caja66 {
+	width: 100px;
+	height: 100px;
+	display: block;
+	position: absolute;
+	background: yellow;
+	bottom: 0;
+}
+
+
+.caja67 {
+	width: 100px;
+	height: 100px;
+	display: block;
+	position: absolute;
+	background: yellow;
+	bottom: 0;
+	margin: 146px;
+}
+
+
+/***FIXED***/ /**************************************************/
+
+/*Agregamos un fondo de color rojo para diferenciarlo y el position:fixed*/
+
+/*
+.caja-fixed {
+	background: red;
+	position: fixed;
+}
+*/
+
+
+/***STICKY***/ /**************************************************/
+
+/*
+.caja-sticky {
+	background: red;
+	position: sticky;
+}
+/*
+
+/*Agregando propiedad sticky y opacity*/
+
+/*
+.caja-sticky {
+	background: red;
+	position: sticky;
+	opacity: 0.3px;
+}
+*/
+
+/*Definiendo en que lugar/momento de la página va a estar fijo
+
+.caja-sticky2 {
+	background: aqua;
+	position: sticky;
+	opacity: 0.7;
+	top: 0;
+}
+*/
+
+/*Definiendo el top odnde comenzará a quedar fijo
+
+.caja-sticky3 {
+	background: green;
+	position: sticky;
+	top: 50px;
+}
+*/

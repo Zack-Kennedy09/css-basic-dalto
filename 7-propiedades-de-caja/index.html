@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Propiedades de caja</title>
+	<link rel="stylesheet" type="text/css" href="estilo.css">
+	<link rel="stylesheet" type="text/css" href="normalize.css">
+</head>
+<body>
+	<h1>Propiedades de caja</h1>
+	<p>
+		padding, width and height, box-sizing, margin, bordes
+	</p><br>
+	<p>*******************************</p>
+	<h3>background-color: permite cambiar el color de fondo</h3><br>
+	<h2>Rancio1</h2><br><br>
+	<p>*******************************</p><br>
+	
+	<!--PADDING-->
+
+	<h3 class="subtitles">*Primera propiedad: padding</h3>
+	<p>
+		Es la distancia que hay entre el texto y los bordes de la caja.		Tenemos 4 padding's: padding left (izquierda), padding top (arriba), padding right (derecha), padding bottom (abajo)
+	</p>
+	<div>
+		<h3>Padding example 1</h3>
+		<img src="padding-ej.png" alt="padding-1" class="img-example"><br>
+		<h3>Padding example 2</h3>
+		<img src="padding-sides.png" alt="padding-2 "class="img-example">
+	</div><br>
+
+	<h3>Agregando el padding:</h3>
+	<h4>Rancio2</h4><br><br>
+	<h3>Agregando el padding en una sola linea (20px)</h3>
+	<h5>Rancio3</h5><br><br>
+	<p>
+		Si queremos que en el eje "X" (arriba y abajo) tenga una medida y en el eje "Y" (izquierda y derecha) tenga otra:<br>top and bottom 20px, left and right 30px
+	</p>
+	<h6>Rancio4</h6><br>
+	<img src="padding-ejes.png" class="img-example"><br>
+	<h3>Ahora si queremos asignar diferentes medidas a cada lado:</h3>
+	<h6 class="seventh-title">Rancio7</h6><br>
+	<p>
+		Se ajustará cada parametro segun su orden, como se ve en la imagen<br>
+		top:10px, right:20px, buttom:30px, left:40px
+	</p>
+	<img src="padding-order.png" alt="padding-2 "class="img-example">
+	<img src="padding-order2.png" alt="padding.order2" class="img-example"><br><br>
+
+	<!--WIDTH AND HEIGHT / BOX-SIZING-->
+
+	<h3 class="subtitles">*width and height<br>*box-sizing</h3><br>
+	<p>
+		Añandimos otras propiedades como por ejemplo: height (alto) y width 
+		(ancho)<br>le dejamos el box-sizing como estaba antes de reiniciarlo con el nomalize para ver como quedaria la caja<br>>>box-sizing: content-box;
+	</p>
+	<h6 class="eighth-title">Rancio8</h6>
+	<p>
+		De esta manera le estamos dando un alto de 100px con el height y a la vez se le estan sumando los 10px que tiene la propiedad padding, lo cual sumaria 120px, ademas el ancho asignado de 100px del width, se le suman 50px de cada lado por lo que daria un total de 200px<br>Asi que si queremos que sea fijo de 100px, cuando lo indicamos con el height y el width (hablando del ancho total de la caja), ahi es donde colocamos el box-sizing: borderbox;
+	</p><br><br>
+	<h3>Lo mismo de antes pero con la propiedad de box-sizing: border-box</h3>
+	<h6 class="ninth-title">Rancio9</h6>
+	<p>
+		Ahora si queda definido que sera fijo de 100px y no se pasara de ahí<br><br>Quedará deforme con respecto al nombre del titulo (el texto), ya que le dimos un padding de 10px y de 50px, lo que hace que se mueva 50px a la derecha, lo que se puede hacer es colocar el contenedor mas grande:
+	</p><br><br>
+	<h3>Lo mismo pero con 300px en height y width</h3>
+	<h6 class="tenth-title">Rancio10</h6><br><br>
+	<p>
+		Otras maneras de hacerlo mejor.<br>Centrarlo horizontalmente con text-align: center<br>El height lo dejo en 100px para que no estorbe tanto hacia abajo
+	</p>
+	<h6 class="eleventh-title">Rancio11</h6><br><br><br>
+	
+	<!--MARGIN-->
+
+	<h3 class="subtitles">*Propiedad margin</h3><br>
+	<p>
+		Es la distancia que hay entre dos cajas.<br>
+		Si tenemos un margin de 0, las cajas van a estar pegadas.
+	</p><br>
+	<h3>Ej. colocamos dos cajas:</h3>
+	<h6 class="twelfth-title">Rancio12</h6>
+	<h6 class="twelfth-title">Rancio12</h6>
+	<p>
+		Aqui lo que está pasando es que hay un espacio.<br>
+		(No hay margin). Hay un espacio porque se colocó una etiqueta para el titulo debajo de la otra y al estar con la propiedad "inline" se coloca al lado pero con ese espacio el cual corresponde al salto entre etiquetas, en este caso "h6" 
+	</p><br>
+	<p>
+		Si se coloca la etiqueta (en este caso el h6) en la misma linea del otro titulo, entonces no tendrá espacio
+	</p>
+	<h6 class="thirteenth-title">Rancio13</h6><h6 class="thirteenth-title">Rancio13</h6>
+	<p>
+		Hay 0 de margin, en el normalize ya le dimos margin:0 y padding:0 a todos los elementos
+	</p><br>
+	<h3>Ahora le damos margin</h3>
+	<p class="separation-box">
+		Separacion
+	</p>
+	<h6 class="fourteenth-title">Rancio14</h6><h6 class="fourteenth-title">Rancio14</h6>
+	<p>
+		Se separa de todos los lados en este caso 10px
+	</p>
+	<p>
+		Se puede apreciar que la separacion del medio es mas ancha que la de los otros lados. esto pasa porque se estan sumando los 10px de ambas cajas. Asi que en el medio hay 20px
+	</p><br>
+	<p>
+		Al igual que en el padding se asignan los bordes segun como se declaren como parametros:<br> 20px up and down, 10px left and right
+	</p>
+	<p class="separation-box">Separacion</p>
+	<h6 class="fifteenth-title">Rancio15</h6><h6 class="fifteenth-title">Rancio15</h6>
+
+	<!--BORDER-RADIUS-->
+
+	<h3 class="subtitles">*Propiedad border-radius</h3><br>
+	<p>
+		Es el borde de una caja (controla el cuanto vamos a redondear el borde)<br>10px de redendeado:
+	</p>
+	<h6 class="sixteenth-title">Rancio16</h6><h6 class="sixteenth-title">Rancio16</h6>
+	<p>
+		Para redondearlo todo, el valor de la propiedad es de 50%
+	</p>
+	<h6 class="seventeenth-title">Rancio17</h6><h6 class="seventeenth-title">Rancio17</h6>
+	<p>
+		Tambien se maneja con medidas relativas, por ej: 2em, lo que equivale a 16px aprox
+	</p>
+	<h6 class="eighteenth-title">Rancio18</h6><h6 class="eighteenth-title">Rancio18</h6>
+	
+	<!--BORDER-->
+
+	<h3 class="subtitles-modified">*border</h3>
+	<p>
+		Tambien está el border normal. Es un "sortened property" (una propiedad acortada). Tenemos:<br>border-width:;<br>border-color:;<br> border-style:;<br>
+		Para simplificar estas propiedades:<br>
+		1.Primero le damos el tamaño al borde = 4px<br>
+		2.El estilo. Hay muchos como solid, dashed, double... = solid<br>
+		3.El color = blue<br>
+		Esto se coloca como parametros dentro de la propiedad
+	</p>
+	<h6 class="nineteenth-title">Rancio19</h6><h6 class="nineteenth-title">Rancio19</h6><br>
+	<p>
+		Mas estilos del border:
+	</p>
+	<h6 class="twentieth-title">Rancio20</h6><h6 class="twentiethFirst-title">Rancio21</h6><h6 class="twentiethSecond-title">Rancio22</h6><h6 class="twentiethThird-title">Rancio23</h6><h6 class="twentiethFourth-title">Rancio24</h6>
+	<div class="styles_example">
+		<p class="styles-example__1">dashed</p>
+		<p class="styles-example__1">double</p>
+		<p class="styles-example__1">groove</p>
+		<p class="styles-example__1">ridge</p>
+		<p class="styles-example__1">inset</p>
+	</div>
+
+	<!--BOX-SHADOW-->
+
+	<h3 class="subtitles">*box-shadow (sombras)</h3><br>
+	<p>
+		Esta propiedad nos permite darle sombra a la caja<br>
+		El primer parametro le damos tamaño al eje X = 2px,<br>
+		el segundo al eje Y = 4px,<br>
+		el tercero va a ser el tamaño de desenfoque = 15px,<br>
+		el cuarto el tamaño del borde, generalmente se le da cero = 0,<br>
+		y el quinto es el color = #000 (negro)<br>
+	</p><br>
+	<img src="box-shadow.png" alt="box-shadow" class="img-example"><br><br>
+	<p>
+		<i>Examples</i><br><br>
+	</p>
+	<h6 class="twentiethFifth-title">Rancio25</h6>
+	<h6 class="twentiethSixth-title">Rancio26</h6>
+	<h6 class="twentiethSeventh-title">Rancio27</h6>
+	<div class="styles-example2">
+		<p class="styles-example2__2">2px 10px 25px 10px #000</p>
+		<p class="styles-example2__2">0px 0px 10px 0px #000</p>
+		<p class="styles-example2__2">0px 0px 10px 3px #000</p>
+	</div>
+	<h6 class="twentiethEighth-title">Rancio28</h6>
+	<h6 class="twentiethNinth-title">Rancio29</h6>
+	<div class="styles-example2">
+		<p class="styles-example2__2--margleft">0px 0px 15px 30px #000</p>
+		<p class="styles-example2__2">30px 10px 10px 10px #000</p>
+	</div>
+	<p>
+		Para darle mas intensidad del sombreado colocar coma "," despues de los parametros y volverlos a colocar: 
+	</p>
+	<h6 class="thirtieth-title">Rancio30</h6>
+	<p class="styles-example2__2">
+		30px 10px 10px #000, 30px 10px 10px 10px #000, 30px 10px 10px 10px #000
+	</p>
+
+	<!--TEXT-SHADOW-->
+
+	<h3 class="subtitles">*text-shadow</h3><br>
+	<p>
+		Igual que la sombra del box-shadow pero con el texto. Este solo tiene 4 parametros ya que no tiene el tamaño del borde (o rellenar), por lo que se le da estilo de esta manera:<br>
+		El primero eje X,<br>
+		El segundo eje Y,<br>
+		El tercero el difuminado,<br>
+		El cuarto el color<br>
+	 </p>
+	 <h6 class="thirtiethFirst-title">Rancio31</h6>
+	 <div class="styles-example2">
+	 	<p class="styles-example2__2">
+	 		2px 2px 7px #fff
+	 	</p>
+	 </div>
+	 <p>
+	 	Para darle mas intensidad del sombreado colocar coma "," despues de los parametros y volverlos a colocar:
+	 </p>
+	 <h6 class="thirtiethSecond-title">Rancio32</h6>
+	 <div class="styles-example3">
+	 	<p class="styles-example3__3">
+	 		2px 2px 7px #fff, 2px 2px 7px #fff
+	 	</p>	
+	 </div>
+	 
+	 <!--TRANSFORM-->
+
+	 <h3 class="subtitles">*transform</h3><br>
+	 <p>
+	 	Esto ya es una funcion "rotate()"<br>Dentro del parentesis se le colocan los grados que rotará la caja
+	 </p><br>
+	 <p>
+	 	trasnform: rotate(90deg)
+	 </p>
+	 <h6 class="thirtiethThird-title">Rancio33</h6>
+	 <h6 class="thirtiethThird-title">Rancio33</h6>
+	 <p>
+	 	transform: rotate(45deg)
+	 </p>
+	 <h6 class="thirtiethFourth-title">Rancio34</h6>
+	 <h6 class="thirtiethFourth-title">Rancio34</h6>
+	 <p>
+	 	Para que rote hacia el otro lado, se usan numeros negativos:<br><br>
+	 	transform: rotate(-45deg)
+	 </p>
+	 <h6 class="thirtiethFifth-title">Rancio35</h6>
+	 <h6 class="thirtiethFifth-title">Rancio35</h6>
+	 <p>
+	 	Esta propiedad es un mundo a parte, asi que mas adelante la explicamos mejor
+	 </p><br><br>
+	 </body>
+</html>
+
+

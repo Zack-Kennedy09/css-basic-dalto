@@ -1,0 +1,111 @@
+/*
+Propiedades de texto
+
+font-size: 2em;
+font-family: tipografia;
+line-height: 1.9;
+front-weight: normal;
+front-stretch: normal;
+front-variant: small-caps;
+
+*/
+/*contenedor que le derá la medida a 1em*/
+.contact-form {
+	font-size: 25px;
+}
+
+/*
+*font-size: El tamaño de la letra */
+
+.contact-form__h2 {
+	font-size: 2em;
+}
+ 
+/*
+*font-family: Es la tipografia */
+
+.contact-form2__h2 {
+	font-family: Georgia;
+}
+
+/*
+*line-height: Nace del centro de la letra
+y 1 line height = 1/2 del tamaño de la letra 
+hacia arriba + 1/2 hacia abajo. Tambien le podamos dar 1.4, 4, 6 o el valor que queramos
+*/
+
+.contact-form3__h2 {
+	line-height: 2;
+}
+
+/*
+*font-weigth: cambia el ancho o grosor de las letras. Se le puede asignar valores
+como 100, 400, 700, 900. En algunas tipografias solo hay diferencia entre 400 y 700,
+pero en otras si es mas variable el grosor
+*/
+
+.contact-form4__h2 {
+	font-weight: 100;
+}
+
+/*
+*font-stretch: Está el normal, condensed. Es muy inutil */
+
+.contact-form5__h2 {
+	font-stretch: normal;
+}
+
+/*
+*font-variant: Tambien es muy inutil */
+
+.contact-form6__h2 {
+	font-variant: small-caps;
+}
+
+/*Aplicando todas las propiedades*/
+
+.contact-form7__h2 {
+	font-size: 25px;
+	font-family: sans-serif;
+	line-height: 2;
+	font-weight: 100;
+	font-stretch: normal;
+	font-variant: small-caps;
+}
+
+/*Otra*/
+
+.contact-form8__h2 {
+	font-size: 25px;
+	font-family: sans-serif;
+	color: red;
+}
+
+
+/*
+Para exportar tipografias:
+Google fonts
+Copiar el link <link href="https://archivo_css...">
+Lo pegamos en el <head>
+Para implementarlo lo dice en (Specify in CSS): font-family 'Oswald', sans-serif
+
+Se pone con coma (,) porque en caso de que no tengamos o no esté desponible
+la primer tipografia, accede a la segunda
+
+*/
+
+.contact-form9__h2 {
+	font-size: 25px;
+	font-family: Georgia, sans-serif;
+	color: red;
+}
+
+/*
+Para aplicar la tipografia a todo, se coloca dentro de un selector universal:
+
+* {
+	font-family: 'Lobster, cursive;
+	font-weight: 100;
+}
+
+*/

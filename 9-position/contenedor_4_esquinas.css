@@ -1,0 +1,139 @@
+
+* {
+	font-size: 30px;
+	font-family: cursive;
+}
+
+/*le damos estas propiedades a todos los divs en general*/
+
+div {
+	display: block;
+	background: green;
+	position: absolute;
+}
+
+/*
+-position: Como le di absolute a todos los divs, entonces le agrego al 
+contenedor position:static.
+-border: Le doy el borde.
+-margin: Con el valor de auto centramos, esto es como decir "margin-left y 
+margin-right" ya sabemos que si ponemos dos parametros los 50px son para el 
+eje Y, mientras que el auto es para el eje X, asi que son 50 arriba y abajo 
+y automatico a los costados, si le dieramos auto en el eje de Y no funciona 
+verticalmente por eso le doy 50px
+-width y height: seran el tamaño que ocupe la caja del contenedor (es la 
+principal)
+*/
+
+.container-corners {
+	position: relative;
+	border: 4px solid red;
+	margin: 50px auto;
+	height: 400px;
+	width: 400px;
+}
+
+
+/*Vamos a crear cajas, las cajas van a tener un tamaño tambien, para esto 
+colocamos un selector con dos divs seguidos para seleccionar a los divs que
+están dentro de otro div, de esta manera no afectamos al contenedor.
+Esto es para no colocar las mismas propiedades en cada uno de los divs por 
+separado*/
+
+div div {
+	height: 100px;
+	width: 100px;
+	background: yellow;
+}
+
+/*Hasta aqui estan todas posicionadas de manera absoluta*/
+
+/*Ahora vamos a colocar una caja en cada esquina*/
+
+/*Para verificar que las cajas están posicionadas de manera absoluta le 
+podemos dar por ejemplo un top:200px y ella se moverá, en este caso la caja1
+se movera 200px hacia abajo*/
+
+/*Ahora hay que tener un cuenta que el absolute toma como referencia el 
+viewport o el contenedor. El contenedor lo puede tomar como punto de referencia
+solamente si está posicionado.
+Si le cambiamos el position:static por position:relative 
+Ahora el elemento está posicionado*/
+
+/*Para mover las cajas a cada esquina:
+Si todas están en la esquina superior izquierda las movemos según la propiedad
+que requiera. Ej. para mover la caja1 a la esquina inferior derecha, primero
+se pasa a la derecha con right:0 y luego se pasa abajo con bottom:0;
+Y asi con los demás lados. Caja2 a la esquina superior derecha: right:0; 
+Caja3 esquina superior izquierda: top:0;
+Caja4 esquina inferior izquierda: bottom:0;*/
+
+.caja37 {
+	right: 0;
+	bottom: 0;
+}
+
+.caja38 {
+	right: 0;
+}
+
+.caja39 {
+	top: 0;
+}
+
+.caja40 {
+	bottom: 0;
+}
+
+
+/*Como hacemos si quisieramos agregar una caja en el medio.
+Agregamos otro div (caja5).
+No funcionaria si le dieramos por ejemplo un margin:auto;
+
+matematicamente esto se centraria con un margin:150px;
+Es los 400px de la caja contenedora, la mitad que son 200px, pero además
+le tengo que restar el de los costados, es el tamaño de la caja, osea 100px
+significa que tengo que sacarle la mitad a esto, son 50px.
+Entonces los 200px de mitad de la caja contenedora menos 50px de la mitad
+de la caja que irá centrada, son 150px.
+Aún asi le dimos 4px de borde, así que no estaria centrada del todo. Como el
+borde le está sacando 4px de cada lado, para un total de 8px. La mitad son
+4px por lo que el calculo final seria un margin de 146px.
+*/
+
+/*
+.caja41 {
+	margin: 146px;
+}
+*/
+
+/*Pero si tuviermos una caja de la cual no sabemos las dimensiones o no las
+definimos, porque mas adelante trabajamos con flex-box o grid */
+
+.caja41 {
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	margin: auto;
+}
+
+/*De esta manera podemos centrarlo así no sepamos el ancho o el alto de la 
+caja y sin estar haciendo algun calculo con JavaScript. 
+Porque se puede calcular manualmente, pero si va cambiendo? si se adapta
+a distintas resoluciones?. La mejor forma seria esta
+
+Se puede cambiar la posición de la caja general (el contenedor) modificando
+los valores y propiedades desde margin-top o margin-left por ejemplo.
+
+Sacamos el margin del contenedor y quedará en el principio de la pagina 
+(arriba a la izquierda) y luego le agregamos margin-left:100px; para moverla
+a la derecha y margin-top:50px; para moverla hacia abajo
+
+
+contenedor =
+-(quito) margin: 50px auto;
+margin-left: 100px;
+margin-top: 50px;
+*/
+

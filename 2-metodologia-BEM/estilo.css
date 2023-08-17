@@ -1,0 +1,162 @@
+/*
+***METODOLOGIA BEM***
+*/
+
+/*Titulo:*/
+#title-black {
+	color: black;
+}
+
+/*
+Es una metodologia que consiste en evitar los conflictos 
+de especificidad, evitar seleccionar muchas clases y generar
+conflictos por todas partes.
+
+Una forma en la que podemos conocer y darnos cuenta de que
+elemento estamos seleccionando, es a partir de las clases.
+
+Nos basamos en el nombre de la clase, para saber que elemento
+estamos seleccionando
+
+Para saber como funciona esto creamos un <div>, que sera como
+una especie de contenedor.
+Le damos la clase: (formulario)
+Y dentro creamos 2 input's (el atributo "name" aqui no lo usamos)
+
+//esto en HTML
+<div class="formulario">
+	<input type="text">
+	<input type="password">		
+</div>
+
+Si quisieramos seleccionar los <input> no hariamos esto:
+//esto dentro de la misma etiqueta de HTML (el class)
+<input type="text" class="input-formulario">
+porque ¿que pasaria si tuvieramos mas de un formulario?
+¿cuantos (input-formularios) pondriamos?:
+
+<input type="text" class="input-formulario-2">  <- NO
+
+Para esto hay una solucion, la forma de la metodologia BEM
+es la siguiente:
+
+poner el nombre del contenedor porque esto se hace por 
+contenedores, es como por "bloques". En éste caso el 
+contenedor es el valor de la clase que está en el div
+(<div class="formulario") = "formulario". 
+(Este valor se puede escribir con un nombre mas especifico 
+para saber a que elemento nos estamos refiriendo). 
+A este nombre le colocamos dos guiones bajos (__) y luego 
+el nombre del elemento (puede ser cualquiera) en este caso 
+colocaré (input). <- Esto iría en el <input>:
+
+//Esto en HTML
+<input type="text" class="formulario__input">
+<input type="text" class="formulario__input">
+
+<- esto se coloca en ambos <input>, de esta forma estamos 
+aplicando la metodologia BEM. Entonces no hace falta que 
+pongamos: .input-form y no sepamos de que form estamos 
+hablando
+
+Entonces para darle las propiedades y valores en CSS:
+No hace falta poner (form input) para seleccionar el <input>
+que está dentro de un <form>, no hace falta que pongamos
+(.formulario input), es todo mas sencillo y encima no vamos
+a tener problemas de especificidad por el hecho de que estamos
+manejando todo por clases, es todo en cascada, todo uniforme
+*/
+
+/*1 First form*/
+
+.formulario__input {
+	color: red;
+}
+/*Le damos el color rojo a los dos formularios*/
+
+/*
+Ahora ¿que pasaria si tuvieramos muchos <input type="text"> (formularios)?
+y hay solo un <input> que le quisieramos cambiar algo, 
+por ejemplo al primer <input>
+
+//Esto en HTML
+<div class="contact-form">
+	<input type="text" class="contact-form__input"--a>
+	<input type="text" class="contact-form__input">
+	<input type="text" class="contact-form__input">
+	<input type="password" class="contact-form__input">
+</div>
+*/
+
+/*Esto en CSS
+En el segundo formulario el primer input sera de color green*/
+/*2 Second form*/
+.contact-form__hola:first-child {
+	color: green;
+}
+
+/*Y los demas seran de color brown*/
+.contact-form__hola {
+	color:brown;
+}
+
+/*La otra forma de hacer esto es colocando doble guion medio 
+y el nombre de cualquier otra cosa, esto despues del nombre 
+del elemento.
+El primer <input> va ser blue y los demas quedaran por defecto 
+black */
+/*3 Thrid form*/
+.contact-form2__hola2--hello {
+	color: blue;
+}
+
+/*
+Especificando el nombre mejor ya sabemos cual es.
+Por ejemplo en lugar de (hola2--hello) puede ser (input--active)
+asi sabemos que es un input con la clase active, despues cuando
+lo modifiquemos en JavaScript por si queremos cambiar el color 
+dinamicamente y demas, solamente tendremos que cambiar la clase
+active, o en este caso hello, a cualquiera de los demas <inputs>
+y listo; cuando queremos por ejemplo que el segundo <input>
+tenga esta clase le decimos: cuado clickees en el segundo input
+la pasas
+*/
+
+/*Otro ejemplo
+Si aca tubiera este <h2> dentro del <p> NO se haria esto:
+contact-from3__p__h2  <- Esto en HTML
+Sino esto:
+contact-from3__p-h2-->
+
+<div class="contact-form3">
+	<p class="contact-form3__p">
+		<h2 class="contact-form3__p-h2">Title</h2>
+	</p>
+</div>	
+
+/*4 title*/
+/*le doy el color con CSS, llamando a la clase del <h2>*/
+.contact-form3__p-h2 {
+	color: purple;
+}
+
+/*
+El doble guion bajo (__) se pone por bloques, solo por cada bloque.
+Si hay otra seccion:
+
+<div class="suscriber-form">
+	<p class="suscriber-form__p">qlq
+		<h2 class="suscriber-form__p-h2">Title</h2>
+	</p>
+</div>
+
+/*5 qlq*/
+.suscriber-form__p {
+	color: green;
+}
+
+/*title*/
+.suscriber-form__p-h2 {
+	color: blue;
+}
+

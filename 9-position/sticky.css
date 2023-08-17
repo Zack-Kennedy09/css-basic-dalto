@@ -1,0 +1,29 @@
+* {
+	font-size: 30px;
+	font-family: cursive;
+}
+
+/*Agregando propiedad sticky y opacity*/
+
+.caja-sticky {
+	background: red;
+	position: sticky;
+	opacity: 0.3;
+}
+
+/*Definiendo en que lugar/momento de la página va a estar fijo*/
+
+.caja-sticky2 {
+	background: aqua;
+	position: sticky;
+	opacity: 0.7;
+	top: 0;
+}
+
+/*Definiendo el top odnde comenzará a quedar fijo*/
+
+.caja-sticky3 {
+	background: green;
+	position: sticky;
+	top: 50px;
+}

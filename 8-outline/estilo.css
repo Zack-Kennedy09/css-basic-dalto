@@ -1,0 +1,202 @@
+* {
+	font-size: 20px;
+	font-family: cursive;
+	background: rgb(154 154 154);
+}
+
+.title-style {
+	font-size: 50px;
+	text-align: center;
+	padding: 30px;
+	margin: 0 0 30px;
+	background: rgb(43 174 158);
+}
+
+/*OUTLINE*/
+
+/*Le damos estilos a dos cajas dentro de un div*/
+
+.caja1 {
+	width: 100px;
+	height: 100px;
+	background: red;
+}
+
+.caja2 {
+	width: 100px;
+	height: 100px;
+	background: yellow;
+}
+/*
+Al momento de darle las mismas propiedades a diferentes clases, se puede 
+acortar colocando las dos clases en la misma posicion del selector, pero 
+separados por una coma ","
+*/
+
+.caja3, .caja4 {
+	width: 100px;
+	height: 100px;
+	background: red;
+}
+
+/*
+Pero como yo voy a darle otras propiedades, sigo escribiendo en las dos clases por separado.<br>
+Lo que vamos a hacer es ver como una caja afecta a la otra caja...<br>
+las centramos, dandole un margin: auto; a ambas
+*/
+
+.caja5 {
+	width: 100px;
+	height: 100px;
+	background: red;
+	margin: auto;
+}
+
+.caja6 {
+	width: 100px;
+	height: 100px;
+	background: yellow;
+	margin: auto;
+}
+
+/*El margin:auto funciona: arriba y abajo lo que se defina o lo que ya está y 
+a los lados es 50 y 50 (el tamaño total del contenedor menos la mitad de la 
+caja de margin left y lo mismo con margin right). Es un calculo automatico 
+que hace el navegador cuando le decimos margin:auto. Esto funciona con los
+elementos que son bloques y no están posicionados. (mas adelante se habla bien 
+de eso)
+*/
+
+
+/*Que pasa si a la caja de arriba le doy estos valores:
+border: 10px solid blue*/
+
+.caja7 {
+	width: 150px;
+	height: 150px;
+	background: red;
+	margin: auto;
+	border: 10px solid blue;
+}
+
+.caja8 {
+	width: 150px;
+	height: 150px;
+	background: yellow;
+	margin: auto;
+}
+
+/*Separacion para ver como se mueven las cajas en el DOM*/
+
+.separation {
+	background: #000;
+}
+
+/*
+Logicamente adquiere un borde azul, ahora esto está ocupando un lugar 
+(le esta sacando un lugar al rojo).
+Recordando que la propiedad "box-sizing: border-box;" se agregó en el normalize, 
+esto por defecto tiene la propiedad de "box-sizing: content-box;"...*/
+
+/*box-sizing: content-box;*/
+
+.caja9 {
+	width: 150px;
+	height: 150px;
+	background: red;
+	margin: auto;
+	border: 10px solid blue;
+	box-sizing: content-box;
+}
+
+.caja10 {
+	width: 150px;
+	height: 150px;
+	background: yellow;
+	margin: auto;
+}
+
+/*Reemplazando el border por outline*/
+
+.caja11 {
+	width: 150px;
+	height: 150px;
+	background: red;
+	margin: auto;
+	outline: 10px solid blue;
+	box-sizing: content-box;
+}
+
+.caja12 {
+	width: 150px;
+	height: 150px;
+	background: yellow;
+	margin: auto;
+}
+
+/*Sin el box-sizing:box-content*/
+
+.caja13 {
+	width: 150px;
+	height: 150px;
+	background: red;
+	margin: auto;
+	outline: 10px solid blue;
+}
+
+.caja14 {
+	width: 150px;
+	height: 150px;
+	background: yellow;
+	margin: auto;
+}
+
+/*remarcar una caja entre varias cajas
+para hacerlo mas facil aqui, le coloco las propiedades a todos los div*/
+
+div {
+	width: 150px;
+	height: 150px;
+	background: yellow;
+	display: inline-block;
+}
+
+/*Agregando propiedad outline a la primera caja del ejemplo*/
+
+div {
+	width: 150px;
+	height: 150px;
+	background: yellow;
+	display: inline-block;
+}
+
+.caja19 {
+	outline: 5px solid red;
+}
+
+/*Agregando la propiedad outline a la cuarta caja del ejemplo*/
+
+.caja23 {
+	outline: 5px solid red;
+}
+
+/*Agregando la propiedad outline a la tercera caja del ejemplo*/
+
+.caja26 {
+	outline: 5px solid red;
+}
+
+/*Agregando position: relative; para ver ell outline de la tercera caja*/
+
+.caja30 {
+	outline: 5px solid red;
+	position: relative;
+}
+
+
+
+
+
+
+
+

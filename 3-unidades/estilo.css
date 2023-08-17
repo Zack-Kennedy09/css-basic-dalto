@@ -1,0 +1,156 @@
+/*Unidades*/
+
+/*En CSS tenemos dos unidades de medida: las relativas y las 
+que son fijas.
+
+Las que son relativas son las que dependen de algo, las que
+son variables.
+Y las que son fijas como su nombre lo indica, se encuentran
+los pixeles (px), los milimetros(mm), los puntos(pt), 
+los centimetros(cm)
+
+*
+
+Vamos a trabajar primero con la tipografia
+
+*Medidas fijas:
+
+font-size es una propiedad que cambia el tamaño de la letra*/
+/*1. Title*/
+.contact-form__h2 {
+	font-size:5em;
+}
+
+/*
+Que pasa si nosotros quisieramos trabajar con un lyout, o
+explicado de otra manera, si tenemos una caja, la cual tiene
+un texto de cierto tamaño, cuando adaptamos esto a versiones
+moviles cuando la resolucion es menor; con las medidas relativas
+nos va a servir ya que se va a adaptar. Si se hace con medidas
+relativas, entonces el texto se va a salir de esa caja.
+
+Responsive designe es un concepto que se usa para poder
+adaptar las distintas paginas web a moviles y a tablets -
+desktop first
+
+*
+
+*Medidas relativas
+
+Las mediadas relativas son rem y em.
+REM tiene como referencia  el root y tambien se usa bastante,
+pero no lo veremos en el curso
+
+Por defecto 1em son 16pixeles (px).
+Lo que hacemos al escribir 5em, es multiplicar 16px x 5
+lo que seria 80px. 5em == 80px
+Esta medida la trae el navegador por defecto, pero puede
+variar segun sea el navegador, por ej 1em==14px, o 17px, o 18px
+
+Esta medida podemos ponerla nosotros y definirlas,
+para esto se hereda. El contenedor es el que define el valor 
+del em
+
+por ejemplo si al (.contact-form2) le ponemos 20px
+El contenedor es el que define el valor del em
+El contenedor en este caso es la clase del <div> (.contact-form2)*/
+/*Tittle2*/
+.contact-form2 {
+	font-size: 20px;
+}
+
+.contact-form2__h2 {
+	font-size: 1em;
+}
+
+/*Esto ya no va a ser mas 1em == 16px, sino que ahora 1em va a
+valer 20px; 1em == 20px (se multiplica). 
+Lo que hace que 5em sean 100px 5em==100px, si yo le pongo 
+25px al contenedor, entonces 5em valdrá 125px
+
+1em es igual al valor que le demos arriba esa misma propiedad 
+(a la caja contenedora) <- En este caso es (.contact.form2)
+ya que es el contenedor que "contiene" al <h2> y la medida 
+relativa tomara como referencia el contenedor general, asi
+al asignarle cierta cantidad de pixeles los multiplicará
+segun la cantidad de (em) que se coloque en (font-size) de 
+este caso, el <h2>
+
+Si esto no fuese (font-size), sino otra propiedad como (padding),
+(margin), (bottom), (left) o cualquier otra propiedad que 
+necesite otra medida, se hereda
+
+Para la metodologia BEM nos sirve
+
+*
+
+Otra medida relativa
+
+*Viewport width(vw), viewport height(vh)
+
+Estas medidas lo que hacen es ocupar todo el ancho de la pantalla
+ej. El dispositivo tiene 1280 x 720 y 100 viewports width van
+a ser igual al largo total y 100 viewpot height van a ser igual 
+al ancho total (altura)
+
+Para verlo hay que sacar los valores por defecto con el 
+(normalize): */
+
+* {
+padding: 0px;
+margin: 0px;
+}
+
+/*
+Ahora el texto estará pegado a los bordes de la pagina web
+porque no tienen ni padding ni margin
+
+Luego la doy un color de fondo negro. (background-color: #000;)
+
+Si a esto le doy un viewport width (width: 100vw;) esto será
+el mismo ancho de toda la pantalla (con el largo del tamaño
+de la letra del elemento, asi que se vé como una linea horizontal)
+*/
+/*Title3*/
+
+.contact-form3 {
+	font-size: 25px;
+	background-color: #000;
+	width: 100vw;
+}
+
+/*
+Si yo le diera un (vw) de 50, es el 50% de la pantalla
+*/
+/*Title4*/
+
+.contact-form4 {
+	font-size: 25px;
+	background-color: #000;
+	width: 50vw;
+}
+
+/*
+Con el (vh) seria lo mismo, si le coloco ambas aparecera un
+cuadro de 50% de la pantalla de ancho, x 50% de la pantalla
+de alto */
+/*Title5*/
+
+.contact-form5 {
+	font-size: 25px;
+	background-color: #000;
+	width: 50vw;
+	height: 50vh;
+}
+
+/*
+Tambien hay otras medidas relativas que son porcentajes 
+Ej. width: 50%;
+Pero cuando aplicamos porcentajes, lo que se trabaja es el 
+porcentaje de la caja que la contiene. Esto se verá mas 
+adelante en teoria de cajas / box model
+
+*/
+
+
+

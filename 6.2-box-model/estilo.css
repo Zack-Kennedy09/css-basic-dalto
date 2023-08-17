@@ -1,0 +1,25 @@
+/*BOX-MODEL*/
+
+
+* {
+	font-family: cursive;
+	font-weight: 100;
+	font-size: 20px;
+	background-color: grey;
+	margin: 10px !important;
+}
+
+.title {
+	font-size: 40px;
+	background-color: black;
+	color: white;
+	padding:35px;
+	margin: 0;
+	text-align: center;
+	margin-bottom: 20px;
+}
+
+.images {
+	width: 400px;
+	margin: 20px;
+}

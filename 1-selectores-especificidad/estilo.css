@@ -1,0 +1,387 @@
+/*
+
+Hay 4 formas de enlazar archivos CSS:
+1-Estilo en linea
+2-Los estilos definidos por una etiqueta -> la style
+3-En un archivo externo -> con la etiqueta link
+4-Con el import
+
+2-Lo que hacemos con la etiqueta style es trabajar codigo CSS 
+en HTML como si fuese una etiqueta mas:
+<style type="text/css">(el codigo CSS va acá adentro)</style>
+
+4-Otra forma es con el import (importamos el archivo)
+El import ya no es recomendado usarlo:
+<p @import></p>
+
+Las que mas se usan son generalmente las que van en un archivo
+externo y los estilos en linea:
+
+1-Los estilos en linea, en vez de con la etiqueta <style>
+se usa como atributo: Dentro de una etiqueta HTML y luego la
+propiedad con su valor:
+<p style="color:red">lorem ipsum</p>
+
+3-La etiqueta <link>, que es la forma mas común, correcta, 
+optima para trabajar con CSS.
+El atributo (rel) que es (stylesheet) que es hoja de estilo,
+el atributo (type) que significa tipear, asi que indica que
+nos va a tipear texto css (text/css). Y (href) que es donde
+está alojado y el valor será la ruta del archivo CSS:
+<link rel="stylesheet" type="text/css" href="estilo.css"> 
+
+De esta forma tenemos todo mas modularizado, podemos separar
+el codigo por partes y estructurandolo correctamente. Asi
+no hacemos un codigo spaguetti, ya que es un  anti-patron 
+de diseño
+
+
+
+*
+
+
+
+*Estructura de CSS:
+
+selector {
+	propiedad: valor;
+}
+
+selector: selecciona lo que queremos cambiar. cual es el conjunto
+de elementos que vamos a modificar sus propiedades
+propiedad: lo que le vamos a cambiar al elemento>> el color,
+el tamaño, altura, ancho, posicion, agregar sombra, cambiar el texto,
+agregar bordes
+
+
+
+
+
+***SELECTORES***
+
+-Universal
+-de tipo
+-clases
+-ID
+-por atributo
+-descendiente
+-pseudo-clases
+
+(Hay mas selectores, pero se verán mas adelante en el curso)
+
+-Universal: *
+selecciona todos los elementos
+ej:
+
+* {
+	color: red;	//en este caso, "color" le aplica la propiedad a todos los elementos
+}
+*/
+
+* {
+	color: red;
+}
+
+/*
+-De tipo: selecciona por tipo de elemento, por ejemplo por etiquetas
+
+h1 {
+	color: blue;	//aplicó el combio a todo lo que hay en la etiqueta "h1"
+}
+*/
+h1 {
+	color: blue;
+}
+
+/*
+si hay mas etiquetas h1, tambien se le aplicaran las propiedades
+
+*
+
+-Clases: Agregarle a un elemento (en este caso -> etiqueta), le agregamos
+el atributo (class) y el nombre de la clase " "
+ej.
+//en el HTML agregamos el atributo a la etiqueta
+<h2 class="titulo-h2">Titulo con h2 con CSS</h2> 
+
+//ahora en el archivo de CSS, se selecciona con punto(.) y el nombre 
+de la clase (titulo-h2)
+.titulo-h2 {
+	color: green;
+}
+*/
+
+.titulo-h2 {
+	color: green;
+}
+
+
+/*
+Si agrego mas etiquetas (h2) no se va a aplicar esa propiedad ya que 
+no estamos cambiando el color de los elementos h2, sino de los elementos
+que tienen la clase (titulo-h2)
+
+*
+
+-ID: Para seleccionar un elemento por el ID es con numeral (#)
+y despues el nombre de ese ID -> #elemento-a-modificar
+*/
+
+#elemento-a-modificar {
+	color: violet;
+}
+
+/*
+Si le agregamos el mismo ID a otro elemento, se le aplicará la misma
+propiedad, pero no se hace ya que para eso es ID, para que sea unico.
+En CSS tal ves no lo notemos, pero cuando trabajemos con JavaScript
+puede llegar a ser un problema, si en JS agregamos mas de un ID e 
+intentamos modificarlos, vamos a tener problemas. Ademas Google lo
+posiciona peor.
+
+*
+
+-Por Atributo: Le damos un atributo y un valor a un elemento 
+(dentro de una etiqueta de html), el atributo no es especifico, se puede
+llamar como quiera
+ej
+<h3 rancio="sii"> //(esto en html)
+
+se escribe en el archivo de CSS entre corchetes ([]) lo mismo
+que se escribe dentro de la etiqueta de html
+*/
+
+[rancio="sii"] {  /* //esto en CSS*/
+	color: yellow;
+} 
+
+/*
+-Desendiente: si yo tengo esto en html y quiero cambiar el (<p>) ->
+<h4><p>Titulo con h4 CSS</p></h4> //quiero cambiar el color de este (p)
+<h4><b>Titulo con h4 CSS</b></h4>
+<p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+
+Las demas etiquetas de abajo es para comprobar que sólo realiza el cambio
+en la etiqueta que quiero y no afecta a las demas etiquetas iguales
+
+Entonces le digo a CSS que quiero modificar a los <p> que estan dentro de 
+un <h4>. Primero el contenedor, el <h4> está conteniendo al <p>
+*/
+
+h4 p {
+	color: purple;
+}
+
+/*
+Si no hay un <p> que esté dentro de un <h4>, no le va a cambiar el color
+Por eso el otro <p> que está mas abajo no lo modificó
+
+Tambien lo podemos hacer con clases:
+Si esto esta en html y quiero modificar lo que está en <b> ->
+<h5 class="h5-class"><b>Titulo con h5 en CSS</b></h5>
+*/
+
+.h5-class b {
+	color: brown;
+}
+
+/*
+Lo que hace ésto es modificar a <b> que está dentro de los elementos
+que tienen la clase (h5-class)
+
+Otro ejemplo, si en ese mismo h5, dentro del <b> agrego una etiqueta <span> ->
+<h6 class="h6-class"><b>Titulo con h5 en CSS <span>Hello</span></b></h6>
+*/
+.h6-class b {
+	color: brown;
+}
+
+.h6-class b span {
+	color: pink;
+}
+
+/*
+El <span> (Hello) se puso de color pink, mientras que el resto del <b>
+se puso de brown. Esto es por un tema de especificidad, se verá mas adelante.
+
+*
+
+-Pseudo-clases: Es como que en un evento se genera una seleccion, esto
+se verá mas adelante en el curso.
+Hay varios como active, hover...entre otros
+El mas común es hover
+*/
+
+b:hover {
+	color: green;
+}
+
+/*
+<<< Con esto todos los elementos <b> se pongan (green) cuando le paso
+el puntero del mouse encima
+
+Tambien podemos hacerlo con mas especificidad ->
+*/
+
+.h2-class2 p:hover {
+	color: grey;
+}
+
+/*
+Ahora estamos seleccionando con una pseudo-clase y encima de manera
+descendiente
+*/
+
+
+
+
+
+/*
+
+***ESPECIFICIDAD***
+
+Si yo le asigno un color a un elemento ej. a la <i> y al mismo tiempo
+le asigno otro color al mismo elemento. Cual de los diferentes valores
+me va a tomar en cuenta el navegador?
+ej.
+//esto en HTML
+<i>Lorem ipsum dolor sit, amet consectetur adipisicing,</i>
+
+//esto en CSS */
+i {
+	color: green;
+}
+
+i {
+	color: blue;
+}
+
+i {
+	color: gold;
+}
+
+/*
+En este caso toma el ultimo
+Lo que acaba de suceder es que en realidad hice 3 cambios, primero lo 
+hice de color green, despues lo hice de color blue y despues lo hice de
+color gold, solo que paso muy rapido y el navegador no permite ver
+ese cambio que hace. 
+Esto es el tema de la especificidad, que pasa si yo quiero que algo
+no me lo cambie otro atributo, o si yo quiero que halla un par de 
+elementos con un color, pero despues quiero definir un elemento de ese
+tipo con otro color. Cuando quiero darle prioridad a algo y no quiero
+que el ultimo atributo siempre sea el que se toma mas en cuenta
+
+Estos son los niveles de jerarquia:
+
+Se separan por 5 niveles
+
+Important		 -> 1
+
+Estilos en linea -> 2
+
+Identificadores	 -> 3
+
+Clases
+Pseudo-clases	 -> 4
+Atributos
+
+Elementos		 -> 5
+Pseudo-elementos
+
+Cuando seleccionamos a 2 o mas de la misma jerarquia, aqui si se rige
+por la normas de la cascada, quiere decir que el que esté mas abajo será
+quien le dé el valor al elemento
+Ej.
+//esto en HTML
+<small>Lorem ipsum dolor sit, amet consectetur adipisicing,</small>
+*/
+
+small {
+	color: blue;
+}
+
+small {
+	color: green;  /*Este sera el valor por norma de la cascada*/
+}
+
+/*
+Si se esta aplicando dos valores diferentes al mismo elemento va a tener
+mayor prioridad el selector con mayor jerarquia
+Ej.
+*/
+.color-brown-strike {
+	color: brown;
+}
+
+strike {
+	color: yellow;
+}
+
+/*
+Aqui ya no aplicó la norma de la cascada, ya que el selector "clase" 
+tiene mayor jerarquia que el selector "elemento".
+Lo mismo con los demas selectoes
+
+Si hay varios atributos y varios de ellos son de el mismo nivel de 
+jerarquia, los de menor prioridad ya estan descartados, pero los otros
+al pertenecer al mismo nivel ahí si se aplica la norma por cascada,
+no importa el orden el que estén, si se repiten, el de abajo será
+el prioritario
+Ej
+*/
+
+.color-blue-i {
+	color: blue;
+}
+
+i b {
+	color: black;  /*menor jerarquia*/
+}
+
+[ranciobich="color-pink-i"] {
+	color: pink;  /*misma jerarquia que la primera pero está abajo*/
+}
+
+/*
+Tanto la primera como la tercera pertenecen al mismo nivel de jerarquia,
+entonces no entran en conflicto y se aplica la norma de cascada por lo 
+que el tercer selector (atributo) es el que aplica el valor
+
+*
+
+Luego el (ID) supera tanto al (atributo) como a la (clase) y la 
+(pseudo-clase). Mayor que este, es el (estilo en linea) (style)
+Ej.
+//Esto en HTML
+<p class="color-green3" id="color-yellow3" style="color:blue">
+Lorem ipsum dolor sit</p>
+
+*
+
+Y por ultimo, el (important) es el de mayor prioridad.
+*/
+
+h3 p {
+	color:grey !important
+}
+
+#color-purple p {
+	color:purple;
+}
+
+/*
+No es recomendable usarlo porque despues no lo podemos
+cambiar por nada.
+Si sabemos manejar los temas de especificidad y trabajamos
+con buenas metodologias como la metodologia BEM (la veremos
+mas adelante), no vamos a necesitar el important. Pero en 
+casos extremos, sabemos que el important le gana a todo
+*/
+
+
+/*Modificando el titulo*/
+#title-black h1{
+	color: black;
+}
+

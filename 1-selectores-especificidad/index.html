@@ -1,0 +1,56 @@
+<!--No prestar atencion a la semantica, solo esta hecho para probar los
+estilos linia por linea-->
+
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Aprendiendo CSS</title>
+	<!--Esta es una de las formas de enlazar archivos CSS-->
+	<link rel="stylesheet" type="text/css" href="estilo.css">
+</head>
+<body>
+	<div id="title-black">
+		<h1>Temas:</h1>
+		<h1>-Identificando Selectores</h1>
+		<h1>-Especificidad</h1>
+	</div>
+	<br><p>****************************************</p><br>
+
+	<!--Identificando selectores-->
+
+	<h1>Titulo editado con CSS</h1>
+	<p>
+		Lorem, ipsum dolor sit amet consectetur adipisicing elit. Atque quam, voluptate at soluta. Corrupti excepturi temporibus tempora dolore quo incidunt dolor veniam quam at, quidem cumque eligendi animi id sint?
+	</p>
+	<p>
+		Lorem, ipsum dolor sit amet consectetur adipisicing elit. Atque quam, voluptate at soluta. Corrupti excepturi temporibus tempora dolore quo incidunt dolor veniam quam at, quidem cumque eligendi animi id sint?
+	</p>
+	<h2 class="titulo-h2">Titulo con h2 con CSS</h2>
+	<button id="elemento-a-modificar">Enviar</button>
+	<h3 rancio="sii">Titulo con h3 en CSS</h3>
+	<h4><p>Titulo con h4 en CSS</p></h4>
+	<h4><b>Titulo con h4 en CSS</b></h4>
+	<p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+	<h5 class="h5-class"><b>Titulo con h5 en CSS</b></h5>
+	<h6 class="h6-class"><b>Titulo con h6 CSS <span>Hello</span></b></h6>
+	<h2 class="h2-class2"><p>Titulo con h2 en CSS</p></h2>
+	<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Non blanditiis laudantium aperiam distinctio tenetur recusandae sit tempore expedita? Repudiandae similique iure incidunt, eos a nobis, autem ipsam dignissimos delectus facere.</p>
+	<input type="text" value="TheName">
+	<p>
+		Lorem ipsum dolor sit, amet consectetur adipisicing, elit. Sit, praesentium. A nemo quaerat, est dolore libero, corrupti cupiditate, saepe laudantium odio dolorum nulla animi temporibus magni aspernatur ad dicta sunt!
+	</p>
+	
+	<!--Especificidad-->
+
+	<i>Lorem ipsum dolor sit, amet consectetur adipisicing,</i><br>
+	<small>Lorem ipsum dolor sit, amet consectetur adipisic</small><br>
+	<strike class="color-brown-strike">Lorem ipsum dolor sit</strike><br>
+	<i><b class="color-blue-i" ranciobich="color-pink-i">Lorem ipsum dolor sit</b></i>
+	<!--el selector (style) tiene mayor jerarquia que los otros dos-->
+	<p class="color-green3" id="color-yellow3" style="color:blue">Lorem ipsum dolor sit, amet consectetur adipisicing, elit. Reiciendis perspiciatis ullam praesentium, vel quos, minus omnis facilis consectetur repudiandae dolore sapiente, eaque, ipsam esse sed voluptates necessitatibus vitae. Enim, harum.</p>
+	<!--El selector (important) tiene mayor prioridad que el 
+	(ID) y que los demas-->
+	<h3 id="color-purple"><p>Titilo con h3 en CSS</p></h3>
+
+</body>
+</html>

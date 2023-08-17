@@ -1,0 +1,38 @@
+* {
+	font-size: 30px;
+	font-family: cursive;
+}
+
+body {
+	padding-top: 100px;
+}
+
+/*Agregamos un fondo de color rojo para diferenciarlo y el position:fixed*/
+.caja-fixed {
+	background: red;
+	position: fixed;
+	margin: -100px;
+}
+/*Hasta ahora es como un absolute, el contenido que estaba debajo lo está 
+tapando*/
+/*si le damos un display: 0.4px; veremos que por debajo de ese elemento div,
+hay mas texto.
+
+No ocupa espacio en pantalla, el espacio ya no está reservado.
+
+tenemos las propiedades como top, top:20px;
+
+Además si recorto el contenido, se ajusta. Es un bloque (tal como lo es 
+cualquier div, sin embargo se ajusta al contenido, igual que el absolute)
+
+Y su diferencia es que queda fijo, lo cual sirve para algunos navs, resaltar 
+algo, para un modal que es como una ventana emergente...
+
+
+Ahora lo que pasa es que nos está ocupando un fondo (está tapando el contenido). 
+Hay varias soluciones para esto, una de ellas es colocarle en el body un 
+padding-top: 100px; (el valor que se requiera). Al mismo tiempo bajará la caja 
+que contiene el div que pretendemos usar como menú, asi que le damos dentro de 
+la clase de éste div un margin: -100px;*/
+
+
